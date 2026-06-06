@@ -472,17 +472,38 @@
     .communities { background: var(--white); }
     .communities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem; }
     .community-card {
-      padding: 1.5rem 1.25rem;
-      border: 1.5px solid var(--border);
-      border-radius: 6px;
-      text-align: center;
-      transition: all var(--transition);
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
       cursor: default;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
     }
-    .community-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow); }
-    .community-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
-    .community-card p { font-size: 0.75rem; color: var(--mid-gray); }
-    .community-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .community-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .community-card:hover .community-img { transform: scale(1.06); }
+    .community-card:hover .community-overlay { background: linear-gradient(to top, rgba(13,31,53,0.85) 0%, rgba(13,31,53,0.3) 60%, transparent 100%); }
+    .community-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .community-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,31,53,0.78) 0%, rgba(13,31,53,0.2) 55%, transparent 100%);
+      transition: background var(--transition);
+    }
+    .community-text {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1rem 1rem 0.9rem;
+    }
+    .community-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+    .community-card p { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
+    .community-gold-bar {
+      display: block; width: 24px; height: 2px;
+      background: var(--gold); margin-bottom: 0.4rem;
+    }
 
     /* ── CTA BAND ── */
     .cta-band { background: var(--navy); padding: 5rem 5%; }
@@ -939,44 +960,76 @@
     </div>
     <div class="communities-grid">
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Rancho Cucamonga</h4>
-        <p>Ashley's home market</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Luxury home in Rancho Cucamonga" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>Rancho Cucamonga</h4>
+          <p>Ashley's home market</p>
+        </div>
       </div>
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Ontario</h4>
-        <p>Inland Empire hub</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Luxury home in Glendora" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>Glendora</h4>
+          <p>Prestigious foothills living</p>
+        </div>
       </div>
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Upland</h4>
-        <p>Foothill communities</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Luxury home in Upland" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>Upland</h4>
+          <p>Foothill communities</p>
+        </div>
       </div>
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Fontana</h4>
-        <p>Growing family area</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Luxury home in Fontana" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>Fontana</h4>
+          <p>Growing family area</p>
+        </div>
       </div>
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Chino</h4>
-        <p>Established neighborhoods</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Luxury home in Chino" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>Chino</h4>
+          <p>Established neighborhoods</p>
+        </div>
       </div>
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Chino Hills</h4>
-        <p>Scenic hillside living</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Luxury home in Chino Hills" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>Chino Hills</h4>
+          <p>Scenic hillside living</p>
+        </div>
       </div>
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Claremont</h4>
-        <p>College town charm</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Luxury home in Claremont" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>Claremont</h4>
+          <p>College town charm</p>
+        </div>
       </div>
       <div class="community-card">
-        <div class="community-icon">🏡</div>
-        <h4>Pomona</h4>
-        <p>Diverse community</p>
+        <img class="community-img" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Luxury home in La Verne" />
+        <div class="community-overlay"></div>
+        <div class="community-text">
+          <span class="community-gold-bar"></span>
+          <h4>La Verne</h4>
+          <p>Charming tree-lined streets</p>
+        </div>
       </div>
     </div>
   </div>
