@@ -3,1614 +3,1224 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashley Arana | Real Estate Agent | Your Trusted Home Expert</title>
-  <meta name="description" content="Ashley Arana is a dedicated real estate professional helping buyers and sellers achieve their real estate goals. Contact Ashley today for expert guidance." />
+  <title>Ashley Arana | Rancho Cucamonga Realtor | Main Street Realtors</title>
+  <meta name="description" content="Ashley Arana is a top-producing real estate agent with Main Street Realtors in Rancho Cucamonga. Helping buyers and sellers throughout the Inland Empire." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #0d1b2a;
-      --navy-mid: #1b2d42;
-      --gold: #c9973a;
-      --gold-light: #e8b85d;
+      --navy: #0d1f35;
+      --navy-mid: #16344f;
+      --gold: #b8872a;
+      --gold-light: #d4a541;
+      --red: #c0392b;
       --white: #ffffff;
-      --off-white: #f9f7f4;
-      --gray-light: #f2f0ed;
-      --gray-mid: #9a9a9a;
-      --gray-dark: #4a4a4a;
-      --text: #1a1a1a;
-      --radius: 4px;
-      --transition: 0.3s ease;
+      --off-white: #f8f7f5;
+      --light-gray: #f0eeeb;
+      --mid-gray: #9a9a9a;
+      --dark-gray: #444444;
+      --text: #222222;
+      --border: #e2dfd9;
+      --radius: 3px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-hover: 0 12px 40px rgba(0,0,0,0.14);
+      --transition: 0.25s ease;
     }
 
     html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
+    /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: sticky;
+      top: 0;
       z-index: 1000;
+      background: var(--navy);
+      border-bottom: 3px solid var(--gold);
+    }
+    .nav-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 0 5%;
-      height: 72px;
-      background: rgba(13, 27, 42, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201,151,58,0.2);
-      transition: var(--transition);
+      height: 70px;
     }
-
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
+    .nav-logo { text-decoration: none; }
     .nav-logo .name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--white);
-      letter-spacing: 0.5px;
+      display: block;
+      line-height: 1.1;
     }
-    .nav-logo .tagline {
-      font-size: 0.7rem;
-      color: var(--gold);
+    .nav-logo .brokerage {
+      font-size: 0.65rem;
+      color: var(--gold-light);
       letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 500;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-social { display: flex; gap: 0.6rem; }
+    .nav-social a {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--transition);
     }
+    .nav-social a:hover { background: var(--gold); }
+
+    .nav-links { display: flex; gap: 0; list-style: none; }
     .nav-links a {
+      display: block;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
       color: rgba(255,255,255,0.85);
       text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       transition: color var(--transition);
     }
     .nav-links a:hover { color: var(--gold-light); }
 
-    .nav-cta {
+    .nav-call {
       background: var(--gold);
       color: var(--navy) !important;
-      padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1rem !important;
       border-radius: var(--radius);
-      font-weight: 600 !important;
-      transition: background var(--transition) !important;
+      font-weight: 700 !important;
     }
-    .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+    .nav-call:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      transition: var(--transition);
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; }
 
-    /* ─── HERO ─── */
+    /* ── HERO ── */
     .hero {
+      background: linear-gradient(to right, var(--navy) 55%, var(--navy-mid) 100%);
       position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, var(--navy) 0%, #142233 40%, #1a2f47 100%);
       overflow: hidden;
     }
-
-    .hero-bg-pattern {
+    .hero::after {
+      content: '';
       position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 50%, rgba(201,151,58,0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(201,151,58,0.06) 0%, transparent 40%),
-        radial-gradient(circle at 60% 80%, rgba(255,255,255,0.03) 0%, transparent 30%);
+      right: 0; top: 0; bottom: 0;
+      width: 45%;
+      background: linear-gradient(135deg, rgba(184,135,42,0.08) 0%, transparent 60%);
+      pointer-events: none;
     }
-
-    .hero-lines {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(201,151,58,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,151,58,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-
     .hero-inner {
-      position: relative;
-      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 5% 4rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 420px;
       gap: 4rem;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 5%;
-      width: 100%;
-      padding-top: 72px;
+      position: relative;
+      z-index: 2;
     }
 
-    .hero-content {}
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(201,151,58,0.15);
-      border: 1px solid rgba(201,151,58,0.3);
-      color: var(--gold-light);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 4.5vw, 3.8rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
-    .hero-title .accent { color: var(--gold-light); }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 2rem;
-      max-width: 480px;
-      line-height: 1.7;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .hero-stat {}
-    .hero-stat .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-    .hero-stat .label {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.55);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 3px;
-    }
-
-    /* ─── LEAD FORM (HERO) ─── */
-    .hero-form-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 2.5rem;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-    }
-
-    .form-card-header {
-      margin-bottom: 1.5rem;
-    }
-    .form-card-header h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
-    }
-    .form-card-header p {
-      font-size: 0.85rem;
-      color: var(--gray-mid);
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--gray-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.35rem;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1.5px solid #e0ddd8;
-      border-radius: var(--radius);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      color: var(--text);
-      background: var(--white);
-      transition: border-color var(--transition);
-      outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-    }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    .btn-primary {
-      width: 100%;
-      padding: 0.9rem;
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: background var(--transition), transform 0.2s;
-      margin-top: 0.5rem;
-    }
-    .btn-primary:hover {
-      background: var(--navy-mid);
-      transform: translateY(-1px);
-    }
-
-    .btn-gold {
-      background: var(--gold) !important;
-      color: var(--navy) !important;
-    }
-    .btn-gold:hover { background: var(--gold-light) !important; }
-
-    .form-privacy {
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--gray-mid);
-      margin-top: 0.75rem;
-    }
-
-    /* ─── TRUST BAR ─── */
-    .trust-bar {
-      background: var(--gold);
-      padding: 1rem 5%;
-    }
-    .trust-bar-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--navy);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-    .trust-item svg { flex-shrink: 0; }
-
-    /* ─── SECTION COMMONS ─── */
-    section { padding: 5rem 5%; }
-
-    .section-label {
+    .hero-eyebrow {
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.25;
+      color: var(--gold-light);
       margin-bottom: 1rem;
     }
-    .section-sub {
-      font-size: 1rem;
-      color: var(--gray-mid);
-      max-width: 540px;
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
       line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 500px;
     }
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
-    .text-center { text-align: center; }
-    .text-center .section-sub { margin: 0 auto; }
+    .btn-hero-primary {
+      padding: 0.9rem 2rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .btn-hero-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-hero-secondary {
+      padding: 0.9rem 2rem;
+      background: transparent;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      letter-spacing: 0.3px;
+    }
+    .btn-hero-secondary:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-    /* ─── ABOUT ─── */
-    .about { background: var(--off-white); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 5rem;
+    .hero-click-call {
+      display: inline-flex;
       align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
     }
+    .hero-click-call span { color: var(--gold-light); font-weight: 600; }
+    .hero-click-call:hover span { text-decoration: underline; }
 
-    .about-photo-wrap {
-      position: relative;
-    }
-    .about-photo-frame {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      background: var(--gray-light);
-    }
-    .about-photo-frame img {
+    /* Hero Photo Card */
+    .hero-photo-wrap { position: relative; }
+    .hero-photo {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--navy-mid);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
-    .photo-accent {
+    .hero-photo-badge {
       position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 120px;
-      height: 120px;
-      border: 3px solid var(--gold);
-      border-radius: 8px;
-      z-index: -1;
-    }
-    .photo-badge {
-      position: absolute;
-      bottom: 1.5rem;
+      bottom: -1rem;
       left: -1.5rem;
-      background: var(--navy);
-      color: var(--white);
-      padding: 0.75rem 1.25rem;
-      border-radius: 6px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    .photo-badge .big { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
-    .photo-badge .small { font-size: 0.7rem; color: rgba(255,255,255,0.7); letter-spacing: 1px; text-transform: uppercase; }
-
-    .about-content {}
-    .about-content .section-label { margin-bottom: 0.5rem; }
-    .about-body {
-      font-size: 0.98rem;
-      color: var(--gray-dark);
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-    }
-
-    .about-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin: 1.75rem 0;
-    }
-    .about-feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-    .feature-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(201,151,58,0.12);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .about-feature h4 {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.15rem;
-    }
-    .about-feature p { font-size: 0.78rem; color: var(--gray-mid); line-height: 1.4; }
-
-    .about-cta-row {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border: 2px solid var(--navy);
-      border-radius: var(--radius);
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--navy);
-      text-decoration: none;
-      transition: all var(--transition);
-    }
-    .btn-outline:hover { background: var(--navy); color: var(--white); }
-    .btn-solid {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
       background: var(--gold);
-      border: 2px solid var(--gold);
-      border-radius: var(--radius);
-      font-size: 0.88rem;
-      font-weight: 600;
       color: var(--navy);
-      text-decoration: none;
-      transition: all var(--transition);
-    }
-    .btn-solid:hover { background: var(--gold-light); border-color: var(--gold-light); }
-
-    /* ─── SERVICES ─── */
-    .services { background: var(--white); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .service-card {
-      padding: 2rem;
-      border: 1.5px solid #e8e4de;
-      border-radius: 8px;
-      transition: all var(--transition);
-      cursor: default;
-    }
-    .service-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 12px 40px rgba(201,151,58,0.1);
-      transform: translateY(-4px);
-    }
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-    .service-card p {
-      font-size: 0.88rem;
-      color: var(--gray-mid);
-      line-height: 1.65;
-    }
-
-    /* ─── LISTINGS ─── */
-    .listings { background: var(--navy); }
-    .listings .section-label { color: var(--gold-light); }
-    .listings .section-title { color: var(--white); }
-    .listings .section-sub { color: rgba(255,255,255,0.6); }
-
-    .listings-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .listing-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: all var(--transition);
-    }
-    .listing-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(201,151,58,0.4);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    }
-    .listing-img {
-      height: 200px;
-      background: linear-gradient(135deg, #1a2f47, #0d1b2a);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .listing-img-placeholder {
-      color: rgba(255,255,255,0.2);
-      font-size: 0.78rem;
+      padding: 1rem 1.25rem;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
       text-align: center;
-      letter-spacing: 1px;
     }
-    .listing-badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 50px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .badge-new { background: var(--gold); color: var(--navy); }
-    .badge-sold { background: #e74c3c; color: white; }
-    .badge-pending { background: #3498db; color: white; }
+    .hero-photo-badge .big { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; line-height: 1; }
+    .hero-photo-badge .small { font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
 
-    .listing-info { padding: 1.25rem; }
-    .listing-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      margin-bottom: 0.3rem;
-    }
-    .listing-address {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-    .listing-city { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
-    .listing-specs {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.5);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 0.75rem;
-    }
-    .listing-spec { display: flex; align-items: center; gap: 0.3rem; }
-
-    .listings-cta {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .btn-outline-white {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: var(--radius);
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: all var(--transition);
-    }
-    .btn-outline-white:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    /* ─── PROCESS ─── */
-    .process { background: var(--off-white); }
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-      position: relative;
-    }
-    .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 30px;
-      left: calc(12.5% + 25px);
-      right: calc(12.5% + 25px);
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
-      opacity: 0.3;
-    }
-    .step {
-      text-align: center;
-      position: relative;
-    }
-    .step-num {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: var(--gold-light);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-      border: 3px solid var(--gold);
-    }
-    .step h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-    .step p { font-size: 0.82rem; color: var(--gray-mid); line-height: 1.55; }
-
-    /* ─── TESTIMONIALS ─── */
-    .testimonials { background: var(--white); }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .testi-card {
-      padding: 2rem;
+    /* ── STATS BAR ── */
+    .stats-bar {
       background: var(--off-white);
-      border-radius: 10px;
-      border: 1px solid #e8e4de;
-      position: relative;
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 5%;
     }
-    .testi-quote {
-      font-size: 3rem;
-      line-height: 1;
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 0.75rem;
-    }
-    .testi-text {
-      font-size: 0.9rem;
-      color: var(--gray-dark);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-      font-style: italic;
-    }
-    .testi-author { display: flex; align-items: center; gap: 0.75rem; }
-    .testi-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold-light);
-      font-weight: 700;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-    .testi-name { font-size: 0.88rem; font-weight: 600; color: var(--navy); }
-    .testi-role { font-size: 0.75rem; color: var(--gray-mid); }
-    .stars {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 0.75rem;
-    }
-    .star { color: var(--gold); font-size: 0.85rem; }
-
-    /* ─── MARKET AREA ─── */
-    .market { background: var(--gray-light); }
-    .market-areas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2rem;
-    }
-    .area-pill {
-      padding: 0.5rem 1.25rem;
-      background: var(--white);
-      border: 1.5px solid #e0ddd8;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--navy);
-      transition: all var(--transition);
-      cursor: default;
-    }
-    .area-pill:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
-
-    /* ─── LEAD CAPTURE ─── */
-    .lead-capture {
-      background: linear-gradient(135deg, var(--navy) 0%, #142233 60%, #0a1520 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .lead-capture::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 10% 50%, rgba(201,151,58,0.07) 0%, transparent 40%),
-        radial-gradient(circle at 90% 30%, rgba(201,151,58,0.05) 0%, transparent 35%);
-    }
-    .lead-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-    .lead-inner .section-label { color: var(--gold-light); }
-    .lead-inner .section-title { color: var(--white); }
-    .lead-inner .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto 2.5rem; }
-
-    .lead-form {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 2.5rem;
-    }
-    .lead-form .form-group label { color: rgba(255,255,255,0.7); }
-    .lead-form input,
-    .lead-form select,
-    .lead-form textarea {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.15);
-      color: var(--white);
-    }
-    .lead-form input::placeholder,
-    .lead-form textarea::placeholder { color: rgba(255,255,255,0.3); }
-    .lead-form input:focus,
-    .lead-form select:focus,
-    .lead-form textarea:focus {
-      border-color: var(--gold);
-      background: rgba(255,255,255,0.1);
-    }
-    .lead-form select option { background: var(--navy); color: var(--white); }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: #07111c;
-      padding: 4rem 5% 2rem;
-    }
-    .footer-inner {
+    .stats-bar-inner {
       max-width: 1200px;
       margin: 0 auto;
-    }
-    .footer-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      text-align: center;
     }
-    .footer-brand .name {
+    .stat { padding: 1.25rem; }
+    .stat-num {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .stat-num span { color: var(--gold); }
+    .stat-label { font-size: 0.78rem; color: var(--mid-gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.4; }
+    .stat-divider { border-right: 1px solid var(--border); }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 5rem 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 1rem; }
+    .section-sub { font-size: 0.98rem; color: var(--mid-gray); line-height: 1.75; max-width: 580px; }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 0 auto; }
+
+    /* ── SELL SECTION ── */
+    .sell { background: var(--white); }
+    .sell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .sell-body { font-size: 0.96rem; color: var(--dark-gray); line-height: 1.8; margin-bottom: 1.5rem; }
+    .sell-list { list-style: none; margin-bottom: 2rem; }
+    .sell-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.9rem; color: var(--dark-gray); margin-bottom: 0.6rem;
+    }
+    .sell-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      background: var(--navy);
       color: var(--white);
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-    .footer-brand .sub {
-      font-size: 0.7rem;
-      color: var(--gold);
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .footer-brand p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.7;
-      max-width: 280px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.6rem; }
-    .footer-col ul a {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
+      font-weight: 700; font-size: 0.88rem;
+      border-radius: var(--radius);
       text-decoration: none;
-      transition: color var(--transition);
+      border: 2px solid var(--navy);
+      transition: all var(--transition);
     }
-    .footer-col ul a:hover { color: var(--gold-light); }
-    .footer-col .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      margin-bottom: 0.75rem;
-    }
-    .footer-col .contact-item span {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.4;
-    }
-    .footer-col .contact-item a {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
+    .btn-primary:hover { background: transparent; color: var(--navy); }
+    .btn-gold-solid {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700; font-size: 0.88rem;
+      border-radius: var(--radius);
       text-decoration: none;
+      border: 2px solid var(--gold);
+      transition: all var(--transition);
     }
-    .footer-col .contact-item a:hover { color: var(--gold-light); }
+    .btn-gold-solid:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
-    .social-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
+    /* Past Sales Cards */
+    .past-sales-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--mid-gray); margin-bottom: 1rem; margin-top: 0.5rem;
     }
-    .social-link {
-      width: 36px;
-      height: 36px;
+    .past-sales { display: flex; flex-direction: column; gap: 1rem; }
+    .sale-card {
+      display: grid; grid-template-columns: 120px 1fr;
+      border: 1px solid var(--border);
       border-radius: 6px;
-      background: rgba(255,255,255,0.07);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .sale-card:hover { box-shadow: var(--shadow-hover); border-color: var(--gold); transform: translateX(4px); }
+    .sale-img {
+      background: var(--light-gray);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; color: var(--mid-gray); text-align: center;
+      padding: 0.5rem; letter-spacing: 0.5px;
+    }
+    .sale-info { padding: 0.9rem 1rem; }
+    .sale-tag {
+      display: inline-block;
+      background: var(--navy); color: var(--white);
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 0.2rem 0.5rem;
+      border-radius: 2px; margin-bottom: 0.4rem;
+    }
+    .sale-tag.sold { background: #27ae60; }
+    .sale-tag.over { background: var(--gold); color: var(--navy); }
+    .sale-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+    .sale-address { font-size: 0.78rem; color: var(--mid-gray); margin-top: 0.2rem; }
+    .sale-over { font-size: 0.72rem; font-weight: 700; color: #27ae60; margin-top: 0.25rem; }
+    .view-all { margin-top: 1rem; font-size: 0.82rem; font-weight: 600; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .view-all:hover { color: var(--navy); }
+
+    /* ── BUY SECTION ── */
+    .buy { background: var(--off-white); }
+    .buy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .buy-photo { position: relative; }
+    .buy-photo-frame {
+      border-radius: 6px; overflow: hidden;
+      aspect-ratio: 4/5; background: var(--light-gray);
+      box-shadow: var(--shadow);
+    }
+    .buy-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .buy-accent {
+      position: absolute; bottom: -12px; right: -12px;
+      width: 100px; height: 100px;
+      border: 3px solid var(--gold); border-radius: 6px; z-index: -1;
+    }
+    .search-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .search-box h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; }
+    .search-input-row { display: flex; gap: 0.5rem; }
+    .search-input-row input {
+      flex: 1; padding: 0.65rem 1rem;
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      font-family: 'Inter', sans-serif; font-size: 0.85rem;
+      outline: none; transition: border-color var(--transition);
+    }
+    .search-input-row input:focus { border-color: var(--gold); }
+    .search-input-row button {
+      padding: 0.65rem 1.2rem;
+      background: var(--navy); color: var(--white);
+      border: none; border-radius: var(--radius);
+      font-weight: 700; font-size: 0.82rem; cursor: pointer;
+      transition: background var(--transition);
+    }
+    .search-input-row button:hover { background: var(--navy-mid); }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center; }
+    .about-body { font-size: 0.96rem; color: var(--dark-gray); line-height: 1.8; margin-bottom: 1.25rem; }
+    .credentials { margin: 1.75rem 0; }
+    .credentials h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.75rem; }
+    .cred-list { list-style: none; }
+    .cred-list li {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.85rem; color: var(--dark-gray);
+      padding: 0.4rem 0; border-bottom: 1px solid var(--border);
+    }
+    .cred-list li:last-child { border-bottom: none; }
+    .cred-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+    .about-photo-wrap { position: relative; }
+    .about-photo-frame {
+      border-radius: 6px; overflow: hidden;
+      aspect-ratio: 4/5; background: var(--light-gray);
+      box-shadow: var(--shadow);
+    }
+    .about-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .about-accent {
+      position: absolute; bottom: -12px; left: -12px;
+      width: 100px; height: 100px;
+      border: 3px solid var(--navy); border-radius: 6px; z-index: -1;
+    }
+    .brokerage-badge {
+      position: absolute; top: 1.5rem; right: -1.5rem;
+      background: var(--navy); color: var(--white);
+      padding: 0.75rem 1.25rem; border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .brokerage-badge .badge-name { font-size: 0.8rem; font-weight: 700; color: var(--gold-light); }
+    .brokerage-badge .badge-city { font-size: 0.65rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+    .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+    /* ── REVIEWS ── */
+    .reviews { background: var(--off-white); }
+    .reviews-slider { position: relative; overflow: hidden; margin-top: 3rem; }
+    .reviews-track { display: flex; gap: 1.5rem; transition: transform 0.4s ease; }
+    .review-card {
+      min-width: calc(33.33% - 1rem);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+    }
+    .review-stars { display: flex; gap: 3px; margin-bottom: 0.75rem; }
+    .review-stars span { color: #f4b942; font-size: 1rem; }
+    .review-quote {
+      font-size: 0.9rem; color: var(--dark-gray); line-height: 1.7;
+      margin-bottom: 1.25rem; font-style: italic;
+    }
+    .review-author { display: flex; align-items: center; gap: 0.75rem; }
+    .review-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--navy); color: var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+    }
+    .review-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+    .review-type { font-size: 0.72rem; color: var(--mid-gray); }
+    .review-source { font-size: 0.65rem; color: var(--mid-gray); margin-top: 0.1rem; }
+    .slider-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 2rem; }
+    .slider-btn {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--navy); color: var(--white); border: none;
+      cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+      transition: background var(--transition);
+    }
+    .slider-btn:hover { background: var(--gold); color: var(--navy); }
+    .slider-dots { display: flex; gap: 0.4rem; }
+    .slider-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background var(--transition); }
+    .slider-dot.active { background: var(--gold); }
+    .reviews-read-more { text-align: center; margin-top: 1.5rem; }
+    .reviews-read-more a {
+      font-size: 0.85rem; font-weight: 600; color: var(--gold);
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .reviews-read-more a:hover { color: var(--navy); }
+
+    /* ── COMMUNITIES ── */
+    .communities { background: var(--white); }
+    .communities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .community-card {
+      padding: 1.5rem 1.25rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      text-align: center;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .community-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .community-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+    .community-card p { font-size: 0.75rem; color: var(--mid-gray); }
+    .community-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+    /* ── CTA BAND ── */
+    .cta-band { background: var(--navy); padding: 5rem 5%; }
+    .cta-band-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--white); margin-bottom: 0.75rem; }
+    .cta-band p { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
+    .cta-band-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .cta-option {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
       text-decoration: none;
       transition: all var(--transition);
     }
-    .social-link:hover { background: var(--gold); }
+    .cta-option:hover { background: rgba(255,255,255,0.1); border-color: var(--gold); transform: translateY(-3px); }
+    .cta-option-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .cta-option h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.35rem; }
+    .cta-option p { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+    .cta-option .cta-link { display: inline-block; margin-top: 0.75rem; font-size: 0.78rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 1px; }
 
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 2rem;
-      flex-wrap: wrap;
-      gap: 1rem;
+    /* ── NEWSLETTER ── */
+    .newsletter { background: var(--off-white); padding: 4rem 5%; border-top: 1px solid var(--border); }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .newsletter p { font-size: 0.9rem; color: var(--mid-gray); margin-bottom: 1.5rem; }
+    .newsletter-form { display: flex; gap: 0.5rem; }
+    .newsletter-form input {
+      flex: 1; padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      outline: none; transition: border-color var(--transition);
     }
-    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
-
-    /* ─── SUCCESS MESSAGE ─── */
-    .success-msg {
-      display: none;
-      text-align: center;
-      padding: 1.5rem;
-      background: rgba(201,151,58,0.1);
-      border: 1px solid var(--gold);
-      border-radius: 8px;
-      color: var(--gold-light);
-      font-size: 0.9rem;
-      margin-top: 1rem;
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form button {
+      padding: 0.75rem 1.5rem;
+      background: var(--navy); color: var(--white);
+      border: none; border-radius: var(--radius);
+      font-weight: 700; font-size: 0.85rem; cursor: pointer;
+      transition: background var(--transition); white-space: nowrap;
     }
+    .newsletter-form button:hover { background: var(--gold); color: var(--navy); }
+    .newsletter-privacy { font-size: 0.72rem; color: var(--mid-gray); margin-top: 0.75rem; }
 
-    /* ─── MOBILE ─── */
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 4rem 5% 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand .name { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); font-weight: 700; margin-bottom: 0.2rem; }
+    .footer-brand .brokerage { font-size: 0.65rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+    .footer-brand p { font-size: 0.83rem; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 260px; }
+    .footer-social { display: flex; gap: 0.6rem; margin-top: 1.25rem; }
+    .footer-social a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+    .footer-social a:hover { background: var(--gold); }
+    .footer-col h4 { font-size: 0.7rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.55rem; }
+    .footer-col ul a { font-size: 0.83rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color var(--transition); }
+    .footer-col ul a:hover { color: var(--gold-light); }
+    .footer-contact-item { display: flex; gap: 0.6rem; margin-bottom: 0.7rem; align-items: flex-start; }
+    .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-item a, .footer-contact-item span { font-size: 0.83rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-contact-item a:hover { color: var(--gold-light); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
+    .license { font-size: 0.7rem; color: rgba(255,255,255,0.2); margin-top: 0.25rem; }
+
+    /* ── MOBILE ── */
     @media (max-width: 1024px) {
+      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-divider:nth-child(2) { border-right: none; }
+      .sell-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .buy-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .buy-photo { max-width: 340px; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .about-photo-wrap { max-width: 380px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .listings-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-photo-wrap { max-width: 340px; }
+      .brokerage-badge { right: -0.5rem; }
+      .communities-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-band-options { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .process-steps { grid-template-columns: repeat(2, 1fr); }
-      .process-steps::before { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-photo-wrap { max-width: 360px; }
+      .review-card { min-width: calc(50% - 0.75rem); }
     }
-
     @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; padding-top: 100px; }
-      .hero-form-card { max-width: 100%; }
-      .hero-stats { gap: 1.5rem; }
       .nav-links { display: none; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 72px; left: 0; right: 0;
-        background: var(--navy);
-        padding: 2rem 5%;
-        gap: 1.5rem;
-        border-top: 1px solid rgba(201,151,58,0.2);
-        z-index: 999;
-      }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 5%; gap: 0; z-index: 999; border-top: 1px solid rgba(255,255,255,0.1); }
+      .nav-links.open a { padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
       .hamburger { display: flex; }
-      .about-photo-wrap { max-width: 300px; }
-      .photo-badge { left: -0.75rem; }
-      .about-features { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .listings-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-social { display: none; }
+      .hero-inner { padding: 3rem 5%; }
+      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .communities-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .form-row { grid-template-columns: 1fr; }
-      .trust-bar-inner { gap: 1.5rem; }
+      .newsletter-form { flex-direction: column; }
+      .review-card { min-width: 100%; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas a { text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+      section { padding: 3.5rem 5%; }
+      .communities-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    @media (max-width: 480px) {
-      .process-steps { grid-template-columns: 1fr; }
-      section { padding: 3.5rem 5%; }
+    /* ── FORM SUCCESS ── */
+    .success-flash {
+      display: none; background: #eafaf1; border: 1px solid #27ae60;
+      color: #1e8449; font-size: 0.85rem; padding: 0.75rem 1rem;
+      border-radius: var(--radius); margin-top: 0.75rem; text-align: center;
     }
   </style>
 </head>
 <body>
 
-<!-- ─── NAVIGATION ─── -->
-<nav id="navbar">
-  <div class="nav-logo">
-    <span class="name">Ashley Arana</span>
-    <span class="tagline">Real Estate Professional</span>
-  </div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#listings">Listings</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-top">
+    <a href="#home" class="nav-logo">
+      <span class="name">Ashley Arana</span>
+      <span class="brokerage">Main Street Realtors &bull; Rancho Cucamonga</span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-social">
+        <a href="#" aria-label="Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:ashley@ashleyarana.com" aria-label="Email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sell">Sell</a></li>
+        <li><a href="#buy">Buy</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#communities">Communities</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:+19095550000" class="nav-call">Call / Text</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </div>
 </nav>
 
-<!-- ─── HERO ─── -->
+<!-- ── HERO ── -->
 <section class="hero" id="home">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-lines"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        Trusted Local Expert
-      </div>
-      <h1 class="hero-title">
-        Find Your <span class="accent">Perfect Home</span><br />With Confidence
-      </h1>
+      <div class="hero-eyebrow">Rancho Cucamonga &bull; Inland Empire Realtor</div>
+      <h1 class="hero-title">Ashley Arana<br /><span style="color:var(--gold-light);">Main Street Realtors</span></h1>
       <p class="hero-sub">
-        Ashley Arana brings a dedicated, client-first approach to every transaction — helping buyers, sellers, and investors navigate the market with clarity and confidence.
+        Dedicated, results-driven real estate representation for buyers and sellers throughout the Inland Empire. Honest advice. Expert negotiation. Real results.
       </p>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">200+</div>
-          <div class="label">Homes Sold</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">98%</div>
-          <div class="label">Client Satisfaction</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">10+</div>
-          <div class="label">Years Experience</div>
-        </div>
+      <div class="hero-ctas">
+        <a href="#sell" class="btn-hero-primary">Sell My Home</a>
+        <a href="#buy" class="btn-hero-secondary">Find My Next Home</a>
       </div>
+      <a href="tel:+19095550000" class="hero-click-call">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Click to Call / Text &mdash; <span>(909) 555-0000</span>
+      </a>
     </div>
 
-    <!-- Lead Form -->
-    <div class="hero-form-card">
-      <div class="form-card-header">
-        <h3>Start Your Search Today</h3>
-        <p>Tell me what you're looking for — I'll do the rest.</p>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">
+        <img src="ashley.jpg" alt="Ashley Arana, Realtor – Main Street Realtors, Rancho Cucamonga" />
       </div>
-      <form id="heroForm" onsubmit="handleSubmit(event, 'heroSuccess')">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Jane" required />
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Smith" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="jane@example.com" required />
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="(555) 000-0000" />
-        </div>
-        <div class="form-group">
-          <label>I Am Looking To…</label>
-          <select required>
-            <option value="" disabled selected>Select one</option>
-            <option>Buy a Home</option>
-            <option>Sell My Home</option>
-            <option>Buy &amp; Sell</option>
-            <option>Invest in Real Estate</option>
-            <option>Just Browsing</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-primary btn-gold">Connect With Ashley &rarr;</button>
-        <div class="success-msg" id="heroSuccess">
-          Thanks! Ashley will be in touch with you shortly.
-        </div>
-        <p class="form-privacy">Your information is private and never shared.</p>
-      </form>
+      <div class="hero-photo-badge">
+        <div class="big">5★</div>
+        <div class="small">Rated Agent</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── TRUST BAR ─── -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Local Market Specialist
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat stat-divider">
+      <div class="stat-num">200<span>+</span></div>
+      <div class="stat-label">Homes Sold</div>
     </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      5-Star Rated Agent
+    <div class="stat stat-divider">
+      <div class="stat-num">10<span>+</span></div>
+      <div class="stat-label">Years Full-Time Experience</div>
     </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Transparent &amp; Responsive
+    <div class="stat stat-divider">
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-label">Client Satisfaction Rate</div>
     </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Negotiation Expert
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Free Consultations
+    <div class="stat">
+      <div class="stat-num"><span>$</span>50M<span>+</span></div>
+      <div class="stat-label">In Closed Sales Volume</div>
     </div>
   </div>
 </div>
 
-<!-- ─── ABOUT ─── -->
+<!-- ── SELL ── -->
+<section class="sell" id="sell">
+  <div class="section-inner">
+    <div class="sell-grid">
+      <div>
+        <p class="section-label">Sell Your Home</p>
+        <h2 class="section-title">Get the Most Money<br />for Your Home</h2>
+        <p class="sell-body">
+          Selling your home is one of the biggest financial decisions you'll ever make. Ashley combines deep local market knowledge with a proven marketing strategy — professional photography, targeted digital advertising, and expert pricing — to attract serious buyers and maximize your final sale price.
+        </p>
+        <p class="sell-body">
+          From your first consultation to the day you hand over the keys, Ashley handles every detail so you can focus on your next chapter.
+        </p>
+        <ul class="sell-list">
+          <li>Free professional home valuation with no obligation</li>
+          <li>Professional photography and video walkthrough</li>
+          <li>Targeted digital and social media marketing</li>
+          <li>Expert negotiation to protect your bottom line</li>
+          <li>Hands-on guidance from listing to close</li>
+        </ul>
+        <div class="cta-row">
+          <a href="#contact" class="btn-gold-solid">Get a Free Home Valuation</a>
+          <a href="#contact" class="btn-primary">Schedule a Consultation</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="past-sales-label">Featured Past Sales</p>
+        <div class="past-sales">
+          <a href="#contact" class="sale-card">
+            <div class="sale-img">PHOTO</div>
+            <div class="sale-info">
+              <span class="sale-tag sold">Sold</span>
+              <span class="sale-tag over">$38K Over Asking</span>
+              <div class="sale-price">$612,000</div>
+              <div class="sale-address">4821 Vineyard Ave, Rancho Cucamonga</div>
+              <div class="sale-over">&#8593; Sold in 6 days</div>
+            </div>
+          </a>
+          <a href="#contact" class="sale-card">
+            <div class="sale-img">PHOTO</div>
+            <div class="sale-info">
+              <span class="sale-tag sold">Sold</span>
+              <span class="sale-tag over">$22K Over Asking</span>
+              <div class="sale-price">$485,000</div>
+              <div class="sale-address">7103 Elm Court, Ontario, CA</div>
+              <div class="sale-over">&#8593; Sold in 9 days</div>
+            </div>
+          </a>
+          <a href="#contact" class="sale-card">
+            <div class="sale-img">PHOTO</div>
+            <div class="sale-info">
+              <span class="sale-tag sold">Sold</span>
+              <div class="sale-price">$739,500</div>
+              <div class="sale-address">2240 Ridgeline Dr, Upland, CA</div>
+              <div class="sale-over">&#8593; Full price offer</div>
+            </div>
+          </a>
+        </div>
+        <a href="#contact" class="view-all">View More Past Sales &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BUY ── -->
+<section class="buy" id="buy">
+  <div class="section-inner">
+    <div class="buy-grid">
+      <div class="buy-photo">
+        <div class="buy-photo-frame">
+          <img src="ashley.jpg" alt="Ashley Arana helping buyers find homes" />
+        </div>
+        <div class="buy-accent"></div>
+      </div>
+
+      <div>
+        <p class="section-label">Buy a Home</p>
+        <h2 class="section-title">Find the Right Home<br />in a Competitive Market</h2>
+        <p class="sell-body">
+          The Inland Empire market moves fast. Ashley works closely with buyers to understand exactly what they're looking for — and then moves quickly and strategically to get it. Whether you're a first-time buyer or moving up, you'll have a dedicated advocate every step of the way.
+        </p>
+        <ul class="sell-list">
+          <li>Access to all MLS listings plus off-market opportunities</li>
+          <li>Guidance through pre-approval and financing</li>
+          <li>Neighborhood expertise across the Inland Empire</li>
+          <li>Skilled negotiation in competitive multiple-offer situations</li>
+          <li>Full support from offer through inspection to close</li>
+        </ul>
+        <div class="search-box">
+          <h4>Search Available Homes</h4>
+          <div class="search-input-row">
+            <input type="text" placeholder="City, zip code, or neighborhood…" />
+            <button type="button">Search</button>
+          </div>
+        </div>
+        <div class="cta-row" style="margin-top:1.25rem;">
+          <a href="#contact" class="btn-gold-solid">Talk to Ashley About Buying</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
 <section class="about" id="about">
   <div class="section-inner">
     <div class="about-grid">
+      <div>
+        <p class="section-label">About Ashley</p>
+        <h2 class="section-title">Your Advocate in Every<br />Real Estate Transaction</h2>
+        <p class="about-body">
+          Ashley Arana is a full-time real estate professional with Main Street Realtors in Rancho Cucamonga, serving buyers and sellers throughout the Inland Empire. With over a decade of experience and hundreds of closed transactions, Ashley brings a client-first mindset to every deal.
+        </p>
+        <p class="about-body">
+          Known for her honest communication, tireless work ethic, and sharp negotiating skills, Ashley has built her business almost entirely on referrals and repeat clients — the clearest sign that people trust her to get results.
+        </p>
+        <div class="credentials">
+          <h4>Certifications &amp; Recognition</h4>
+          <ul class="cred-list">
+            <li><span class="cred-dot"></span>Licensed California Real Estate Agent</li>
+            <li><span class="cred-dot"></span>Certified Luxury Home Marketing Specialist</li>
+            <li><span class="cred-dot"></span>Certified Real Estate Negotiator</li>
+            <li><span class="cred-dot"></span>First-Time Homebuyer Specialist</li>
+            <li><span class="cred-dot"></span>Top Producer – Main Street Realtors</li>
+            <li><span class="cred-dot"></span>5-Star Rated on Zillow &amp; Google</li>
+          </ul>
+        </div>
+        <div class="cta-row">
+          <a href="#contact" class="btn-gold-solid">Schedule a Free Consultation</a>
+          <a href="tel:+19095550000" class="btn-primary">Call Ashley</a>
+        </div>
+      </div>
+
       <div class="about-photo-wrap">
         <div class="about-photo-frame">
-          <img src="ashley.jpg" alt="Ashley Arana, Real Estate Agent" />
+          <img src="ashley.jpg" alt="Ashley Arana – Main Street Realtors" />
         </div>
-        <div class="photo-accent"></div>
-        <div class="photo-badge">
-          <div class="big">10+</div>
-          <div class="small">Years in Real Estate</div>
-        </div>
-      </div>
-
-      <div class="about-content">
-        <p class="section-label">About Ashley</p>
-        <h2 class="section-title">A Realtor Who<br />Works Hard for You</h2>
-        <p class="about-body">
-          Ashley Arana is a passionate real estate professional with over a decade of experience helping families, first-time buyers, and seasoned investors achieve their property goals. Her deep knowledge of the local market — combined with her commitment to honest, transparent communication — makes every transaction smoother and less stressful.
-        </p>
-        <p class="about-body">
-          Whether you're searching for your dream home or ready to list your property for top dollar, Ashley provides the strategy, marketing muscle, and personal attention your transaction deserves.
-        </p>
-
-        <div class="about-features">
-          <div class="about-feature">
-            <div class="feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div>
-              <h4>Local Market Expert</h4>
-              <p>Deep knowledge of neighborhoods, pricing trends, and hidden gems.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <h4>Always Available</h4>
-              <p>Responsive communication you can count on, 7 days a week.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div>
-              <h4>Top Dollar Results</h4>
-              <p>Strategic pricing and marketing that maximizes your sale price.</p>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div>
-              <h4>Client-First Always</h4>
-              <p>Your goals are the priority from first call to closing day.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-cta-row">
-          <a href="#contact" class="btn-solid">Schedule a Free Consultation</a>
-          <a href="tel:+15550000000" class="btn-outline">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call Ashley
-          </a>
+        <div class="about-accent"></div>
+        <div class="brokerage-badge">
+          <div class="badge-name">Main Street Realtors</div>
+          <div class="badge-city">Rancho Cucamonga, CA</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SERVICES ─── -->
-<section class="services" id="services">
-  <div class="section-inner">
-    <div class="text-center" style="margin-bottom:0.5rem;">
-      <p class="section-label">What I Offer</p>
-      <h2 class="section-title">Full-Service Real Estate,<br />Start to Finish</h2>
-      <p class="section-sub">From market analysis to closing day, every step is handled with care and expertise.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <h3>Buyer Representation</h3>
-        <p>I guide buyers through every step — from pre-approval to closing — ensuring you find the right home at the best possible price. Your interests are always protected.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>Home Selling</h3>
-        <p>I market your home with professional photography, targeted digital campaigns, and strategic pricing to attract qualified buyers and achieve maximum value.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <h3>Investment Properties</h3>
-        <p>Looking for rental income or fix-and-flip opportunities? I help investors identify high-potential properties and analyze returns before you commit.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <h3>Free Home Valuation</h3>
-        <p>Wondering what your home is worth in today's market? I provide detailed, no-obligation comparative market analyses for homeowners considering selling.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <h3>Relocation Services</h3>
-        <p>Moving from out of town? I provide comprehensive area tours, community insights, and school information to help your family settle into the perfect neighborhood.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>First-Time Buyers</h3>
-        <p>Never bought a home before? I walk you through every step — from understanding your budget to making a competitive offer — so you feel confident throughout.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── LISTINGS ─── -->
-<section class="listings" id="listings">
-  <div class="section-inner">
-    <div class="text-center">
-      <p class="section-label">Active &amp; Recent Sales</p>
-      <h2 class="section-title" style="color:white;">Featured Listings</h2>
-      <p class="section-sub">Browse a selection of current and recently sold properties. Contact Ashley to schedule a showing or request more details.</p>
-    </div>
-    <div class="listings-grid">
-      <div class="listing-card">
-        <div class="listing-img">
-          <span class="listing-badge badge-new">New Listing</span>
-          <div class="listing-img-placeholder">PROPERTY PHOTO</div>
-        </div>
-        <div class="listing-info">
-          <div class="listing-price">$485,000</div>
-          <div class="listing-address">1234 Maple Grove Drive</div>
-          <div class="listing-city">Your City, ST 00000</div>
-          <div class="listing-specs">
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              4 Bed
-            </div>
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h7"/></svg>
-              2.5 Bath
-            </div>
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-              2,180 sqft
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="listing-card">
-        <div class="listing-img">
-          <span class="listing-badge badge-new">New Listing</span>
-          <div class="listing-img-placeholder">PROPERTY PHOTO</div>
-        </div>
-        <div class="listing-info">
-          <div class="listing-price">$329,000</div>
-          <div class="listing-address">789 Elmwood Court</div>
-          <div class="listing-city">Your City, ST 00000</div>
-          <div class="listing-specs">
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              3 Bed
-            </div>
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h7"/></svg>
-              2 Bath
-            </div>
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-              1,640 sqft
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="listing-card">
-        <div class="listing-img">
-          <span class="listing-badge badge-sold">Sold</span>
-          <div class="listing-img-placeholder">PROPERTY PHOTO</div>
-        </div>
-        <div class="listing-info">
-          <div class="listing-price">$612,500</div>
-          <div class="listing-address">42 Ridgecrest Boulevard</div>
-          <div class="listing-city">Your City, ST 00000</div>
-          <div class="listing-specs">
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              5 Bed
-            </div>
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h7"/></svg>
-              3 Bath
-            </div>
-            <div class="listing-spec">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-              3,050 sqft
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="listings-cta">
-      <a href="#contact" class="btn-outline-white">View All Listings &amp; Request Showings &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PROCESS ─── -->
-<section class="process" id="process">
-  <div class="section-inner">
-    <div class="text-center">
-      <p class="section-label">How It Works</p>
-      <h2 class="section-title">Simple. Stress-Free. Successful.</h2>
-      <p class="section-sub">Here's what to expect when you work with Ashley — from first contact to keys in hand.</p>
-    </div>
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h4>Free Consultation</h4>
-        <p>We discuss your goals, timeline, and budget with no pressure and no obligation.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h4>Custom Strategy</h4>
-        <p>Ashley builds a personalized plan — whether buying, selling, or investing.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h4>Active Search / Listing</h4>
-        <p>Targeted property searches or professional marketing launches your transaction.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h4>Negotiation &amp; Close</h4>
-        <p>Ashley negotiates fiercely on your behalf and guides you smoothly to closing.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── TESTIMONIALS ─── -->
-<section class="testimonials" id="testimonials">
+<!-- ── REVIEWS ── -->
+<section class="reviews" id="reviews">
   <div class="section-inner">
     <div class="text-center">
       <p class="section-label">Client Reviews</p>
-      <h2 class="section-title">What Clients Are Saying</h2>
-      <p class="section-sub">Real experiences from real clients — their words mean everything.</p>
+      <h2 class="section-title">What Clients Say About Ashley</h2>
+      <p class="section-sub">Real words from real clients — their experiences say everything.</p>
     </div>
-    <div class="testimonials-grid">
-      <div class="testi-card">
-        <div class="stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+
+    <div class="reviews-slider">
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-quote">"Ashley sold our home in just 8 days and got us $38,000 over our asking price. Her marketing strategy was incredible — professional photos, social media, the works. We couldn't be happier."</p>
+          <div class="review-author">
+            <div class="review-avatar">DM</div>
+            <div>
+              <div class="review-name">David &amp; Maria R.</div>
+              <div class="review-type">Home Sellers – Rancho Cucamonga</div>
+              <div class="review-source">★ Zillow Review</div>
+            </div>
+          </div>
         </div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Ashley made buying our first home an incredible experience. She was patient, thorough, and always had our best interests at heart. We couldn't have done it without her.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">JM</div>
-          <div>
-            <div class="testi-name">Jessica &amp; Mark T.</div>
-            <div class="testi-role">First-Time Buyers</div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-quote">"As first-time buyers, we were nervous about the whole process. Ashley made it so easy — she explained everything, was always available, and helped us win in a multiple-offer situation. She's the best!"</p>
+          <div class="review-author">
+            <div class="review-avatar">JT</div>
+            <div>
+              <div class="review-name">Jessica T.</div>
+              <div class="review-type">First-Time Buyer – Ontario, CA</div>
+              <div class="review-source">★ Google Review</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-quote">"We relocated from out of state and Ashley was a lifesaver. She did virtual tours, gave us honest neighborhood advice, and made the whole process seamless. Highly recommend her to anyone!"</p>
+          <div class="review-author">
+            <div class="review-avatar">KL</div>
+            <div>
+              <div class="review-name">Kevin &amp; Laura S.</div>
+              <div class="review-type">Relocation Buyers – Upland, CA</div>
+              <div class="review-source">★ Zillow Review</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-quote">"Ashley sold our home and helped us buy our next one at the same time — coordinating both was no small feat. She handled every detail perfectly. We're so grateful for her expertise and patience."</p>
+          <div class="review-author">
+            <div class="review-avatar">MG</div>
+            <div>
+              <div class="review-name">Michael G.</div>
+              <div class="review-type">Buy &amp; Sell Client – Fontana, CA</div>
+              <div class="review-source">★ Google Review</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-quote">"I've worked with a few agents over the years and Ashley is simply the best. She's honest, responsive, and truly has your best interests at heart. She will be my realtor for life."</p>
+          <div class="review-author">
+            <div class="review-avatar">SR</div>
+            <div>
+              <div class="review-name">Sandra R.</div>
+              <div class="review-type">Repeat Client – Rancho Cucamonga</div>
+              <div class="review-source">★ Zillow Review</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">We sold our home in just 8 days — $22,000 over asking price. Ashley's marketing strategy was unlike anything we'd seen. Absolutely exceptional.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">RK</div>
-          <div>
-            <div class="testi-name">Robert K.</div>
-            <div class="testi-role">Home Seller</div>
-          </div>
-        </div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="slider-btn" onclick="slideReviews(-1)" aria-label="Previous">&#8592;</button>
+      <div class="slider-dots" id="sliderDots">
+        <div class="slider-dot active" onclick="goToSlide(0)"></div>
+        <div class="slider-dot" onclick="goToSlide(1)"></div>
+        <div class="slider-dot" onclick="goToSlide(2)"></div>
       </div>
-      <div class="testi-card">
-        <div class="stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">As an out-of-state buyer, I was nervous about the process. Ashley went above and beyond — virtual tours, honest neighborhood advice, and seamless coordination. Highly recommend.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">SL</div>
-          <div>
-            <div class="testi-name">Sarah L.</div>
-            <div class="testi-role">Relocation Buyer</div>
-          </div>
-        </div>
-      </div>
+      <button class="slider-btn" onclick="slideReviews(1)" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="reviews-read-more">
+      <a href="#contact">Read More Client Reviews &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ─── MARKET AREAS ─── -->
-<section class="market" id="areas">
+<!-- ── COMMUNITIES ── -->
+<section class="communities" id="communities">
   <div class="section-inner">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
-      <div>
-        <p class="section-label">Service Areas</p>
-        <h2 class="section-title">Serving the<br />Communities You Love</h2>
-        <p class="section-sub" style="margin-bottom:2rem;">
-          Ashley has deep roots in the local area and serves buyers and sellers across these communities and surrounding neighborhoods.
-        </p>
-        <a href="#contact" class="btn-solid">Check My Area &rarr;</a>
+    <div class="text-center">
+      <p class="section-label">Service Areas</p>
+      <h2 class="section-title">Communities Ashley Serves</h2>
+      <p class="section-sub">Local expertise across the Inland Empire — from Rancho Cucamonga to the surrounding cities and neighborhoods.</p>
+    </div>
+    <div class="communities-grid">
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Rancho Cucamonga</h4>
+        <p>Ashley's home market</p>
       </div>
-      <div>
-        <div class="market-areas">
-          <div class="area-pill">Your City</div>
-          <div class="area-pill">Downtown</div>
-          <div class="area-pill">North Side</div>
-          <div class="area-pill">Westfield</div>
-          <div class="area-pill">Oak Park</div>
-          <div class="area-pill">Riverside</div>
-          <div class="area-pill">Lakewood</div>
-          <div class="area-pill">Sunridge</div>
-          <div class="area-pill">Cedarbrook</div>
-          <div class="area-pill">Millbrook</div>
-          <div class="area-pill">Pineview</div>
-          <div class="area-pill">Valley Heights</div>
-        </div>
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Ontario</h4>
+        <p>Inland Empire hub</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Upland</h4>
+        <p>Foothill communities</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Fontana</h4>
+        <p>Growing family area</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Chino</h4>
+        <p>Established neighborhoods</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Chino Hills</h4>
+        <p>Scenic hillside living</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Claremont</h4>
+        <p>College town charm</p>
+      </div>
+      <div class="community-card">
+        <div class="community-icon">🏡</div>
+        <h4>Pomona</h4>
+        <p>Diverse community</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── CONTACT / LEAD CAPTURE ─── -->
-<section class="lead-capture" id="contact">
-  <div class="lead-inner section-inner" style="padding:5rem 5%;">
-    <p class="section-label">Get In Touch</p>
-    <h2 class="section-title">Ready to Make Your Move?</h2>
-    <p class="section-sub">
-      Whether you're ready to list, searching for your dream home, or just have questions — reach out today for a free, no-pressure conversation.
-    </p>
-
-    <div class="lead-form">
-      <form id="contactForm" onsubmit="handleSubmit(event, 'contactSuccess')">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Jane" required />
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Smith" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="jane@example.com" required />
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="(555) 000-0000" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>I'm Interested In</label>
-            <select required>
-              <option value="" disabled selected>Select one</option>
-              <option>Buying a Home</option>
-              <option>Selling My Home</option>
-              <option>Free Home Valuation</option>
-              <option>Investment Property</option>
-              <option>Relocation Help</option>
-              <option>General Question</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Timeline</label>
-            <select>
-              <option value="" disabled selected>Select one</option>
-              <option>ASAP</option>
-              <option>1–3 Months</option>
-              <option>3–6 Months</option>
-              <option>6–12 Months</option>
-              <option>Just Exploring</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Message (Optional)</label>
-          <textarea rows="3" placeholder="Tell Ashley anything that would help her assist you…"></textarea>
-        </div>
-        <button type="submit" class="btn-primary btn-gold" style="font-size:1rem; padding:1rem;">
-          Send My Message &rarr;
-        </button>
-        <div class="success-msg" id="contactSuccess">
-          Your message is on its way! Ashley will respond within 24 hours.
-        </div>
-        <p class="form-privacy" style="color:rgba(255,255,255,0.35);">No spam, ever. Your information is safe with us.</p>
-      </form>
+<!-- ── CTA BAND ── -->
+<section class="cta-band" id="contact">
+  <div class="cta-band-inner">
+    <h2>Ready to Make Your Move?</h2>
+    <p>Whether you're buying, selling, or just exploring your options — Ashley is here to help with honest, no-pressure guidance.</p>
+    <div class="cta-band-options">
+      <a href="#sell" class="cta-option">
+        <div class="cta-option-icon">🏷️</div>
+        <h3>Get Home Value</h3>
+        <p>Find out what your home is worth in today's market — free and fast.</p>
+        <span class="cta-link">Get My Value &rarr;</span>
+      </a>
+      <a href="#contact-form" class="cta-option">
+        <div class="cta-option-icon">💬</div>
+        <h3>Contact Ashley</h3>
+        <p>Have questions? Ready to start? Reach out today for a free consultation.</p>
+        <span class="cta-link">Send a Message &rarr;</span>
+      </a>
+      <a href="#buy" class="cta-option">
+        <div class="cta-option-icon">🔍</div>
+        <h3>Search Homes</h3>
+        <p>Browse available listings across the Inland Empire right now.</p>
+        <span class="cta-link">Search Now &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- ── CONTACT FORM ── -->
+<section style="background:var(--white); padding:5rem 5%;" id="contact-form">
+  <div class="section-inner" style="max-width:700px;">
+    <div class="text-center">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Send Ashley a Message</h2>
+      <p class="section-sub" style="margin:0 auto 2.5rem;">Fill out the form and Ashley will get back to you within 24 hours.</p>
+    </div>
+    <form onsubmit="handleSubmit(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">First Name</label>
+          <input type="text" placeholder="Jane" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div>
+          <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">Last Name</label>
+          <input type="text" placeholder="Smith" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">Email</label>
+          <input type="email" placeholder="jane@email.com" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+        <div>
+          <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">Phone</label>
+          <input type="tel" placeholder="(909) 555-0000" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">I'm Looking To…</label>
+          <select required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;background:white;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            <option value="" disabled selected>Select one</option>
+            <option>Buy a Home</option>
+            <option>Sell My Home</option>
+            <option>Buy &amp; Sell</option>
+            <option>Get a Home Valuation</option>
+            <option>Invest in Real Estate</option>
+            <option>Just Exploring</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">Timeline</label>
+          <select style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;background:white;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+            <option value="" disabled selected>Select one</option>
+            <option>ASAP</option>
+            <option>1–3 Months</option>
+            <option>3–6 Months</option>
+            <option>Just Exploring</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">Message (Optional)</label>
+        <textarea rows="3" placeholder="Tell Ashley anything that will help her assist you…" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;resize:vertical;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+      </div>
+      <button type="submit" style="width:100%;padding:1rem;background:var(--navy);color:white;border:none;border-radius:var(--radius);font-family:Inter,sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:background 0.25s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--navy)'" onmouseout="this.style.background='var(--navy)';this.style.color='white'">
+        Send My Message &rarr;
+      </button>
+      <div class="success-flash" id="formSuccess">
+        ✓ Message sent! Ashley will be in touch with you within 24 hours.
+      </div>
+      <p style="text-align:center;font-size:0.75rem;color:var(--mid-gray);margin-top:0.75rem;">Your information is private and will never be shared or sold.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <h3>Stay Ahead of the Inland Empire Market</h3>
+    <p>Get monthly market updates, new listings, and local real estate insights delivered straight to your inbox.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter-privacy">No spam, ever. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="name">Ashley Arana</div>
-        <div class="sub">Real Estate Professional</div>
-        <p>Helping families and individuals buy, sell, and invest in real estate with confidence, clarity, and care.</p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
+        <span class="brokerage">Main Street Realtors &bull; Rancho Cucamonga, CA</span>
+        <p>Helping buyers and sellers throughout the Inland Empire with honest advice, expert strategy, and real results.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="mailto:ashley@ashleyarana.com" aria-label="Email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
-
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h4>Navigate</h4>
         <ul>
+          <li><a href="#sell">Sell My Home</a></li>
+          <li><a href="#buy">Find a Home</a></li>
           <li><a href="#about">About Ashley</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#listings">Listings</a></li>
-          <li><a href="#testimonials">Client Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#reviews">Client Reviews</a></li>
+          <li><a href="#communities">Communities</a></li>
+          <li><a href="#contact-form">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Buyer Representation</a></li>
-          <li><a href="#services">Home Selling</a></li>
-          <li><a href="#services">Investment Properties</a></li>
-          <li><a href="#services">Free Home Valuation</a></li>
-          <li><a href="#services">Relocation Services</a></li>
+          <li><a href="#sell">Listing &amp; Selling</a></li>
+          <li><a href="#buy">Buyer Representation</a></li>
+          <li><a href="#sell">Free Home Valuation</a></li>
+          <li><a href="#buy">First-Time Buyers</a></li>
+          <li><a href="#buy">Relocation Services</a></li>
+          <li><a href="#buy">Investment Properties</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Contact</h4>
-        <div class="contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" style="margin-top:2px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="tel:+15550000000">(555) 000-0000</a>
+        <div class="footer-contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+19095550000">(909) 555-0000</a>
         </div>
-        <div class="contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" style="margin-top:2px;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="footer-contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <a href="mailto:ashley@ashleyarana.com">ashley@ashleyarana.com</a>
         </div>
-        <div class="contact-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" style="margin-top:2px;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Your City, State</span>
+        <div class="footer-contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Rancho Cucamonga, CA 91730</span>
         </div>
-        <div class="contact-item" style="margin-top:0.5rem;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" style="margin-top:2px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div class="footer-contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <span>Mon–Sat: 8am – 7pm</span>
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <p>&copy; 2026 Ashley Arana. All rights reserved.</p>
-      <p>Licensed Real Estate Agent &bull; <a href="#" style="color:rgba(255,255,255,0.3); text-decoration:none;">Privacy Policy</a></p>
+      <div>
+        <p>&copy; 2026 Ashley Arana. All rights reserved.</p>
+        <p class="license">CA DRE License #00000000 &bull; Main Street Realtors, Rancho Cucamonga, CA</p>
+      </div>
+      <p><a href="#">Privacy Policy</a> &bull; <a href="#" style="margin-left:0.5rem;">Terms of Use</a></p>
     </div>
   </div>
 </footer>
 
 <script>
-  // Mobile menu toggle
   function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('open');
+    document.getElementById('navLinks').classList.toggle('open');
   }
-
-  // Close menu on link click
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('open');
-    });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
   });
 
-  // Form submission handler (shows success message; wire up to your backend/CRM)
-  function handleSubmit(e, successId) {
+  // Review slider
+  let currentSlide = 0;
+  const track = document.getElementById('reviewsTrack');
+  const dots = document.querySelectorAll('.slider-dot');
+
+  function getVisibleCount() {
+    return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+  }
+  function updateSlider() {
+    const cards = track.querySelectorAll('.review-card');
+    const visible = getVisibleCount();
+    const maxSlide = Math.max(0, cards.length - visible);
+    if (currentSlide > maxSlide) currentSlide = maxSlide;
+    const cardWidth = cards[0].offsetWidth + 24;
+    track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+  function slideReviews(dir) {
+    const cards = track.querySelectorAll('.review-card');
+    const visible = getVisibleCount();
+    const maxSlide = Math.max(0, cards.length - visible);
+    currentSlide = Math.max(0, Math.min(currentSlide + dir, maxSlide));
+    updateSlider();
+  }
+  function goToSlide(i) { currentSlide = i; updateSlider(); }
+  window.addEventListener('resize', updateSlider);
+
+  // Forms
+  function handleSubmit(e) {
     e.preventDefault();
-    const msg = document.getElementById(successId);
-    if (msg) {
-      msg.style.display = 'block';
-      e.target.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
-      setTimeout(() => { msg.style.display = 'none'; }, 6000);
-    }
+    const s = document.getElementById('formSuccess');
+    s.style.display = 'block';
+    e.target.querySelectorAll('input,select,textarea').forEach(el => el.value = '');
+    setTimeout(() => s.style.display = 'none', 6000);
+  }
+  function handleNewsletter(e) {
+    e.preventDefault();
+    e.target.querySelector('input').value = '';
+    e.target.querySelector('button').textContent = '✓ Subscribed!';
+    setTimeout(() => e.target.querySelector('button').textContent = 'Subscribe', 4000);
   }
 
-  // Subtle nav shadow on scroll
-  window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 20) {
-      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-
-  // Animate elements on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+  // Animate on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.service-card, .listing-card, .testi-card, .step').forEach(el => {
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.sale-card, .review-card, .community-card, .cta-option, .step').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
     observer.observe(el);
   });
 </script>
