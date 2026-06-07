@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashley Arana – Social Media Ads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+    }
+    .page-label {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: -2rem;
+    }
+    .ad-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+    }
+    .ad-tag {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* ── AD WRAPPER: 1080×1080 scaled for screen ── */
+    .ad {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      transform-origin: top center;
+      flex-shrink: 0;
+    }
+    .ad-scaled {
+      transform: scale(0.5);
+      transform-origin: top center;
+      margin-bottom: -540px;
+    }
+
+    /* ════════════════════════════════
+       AD 1 — "Thinking of Selling?"
+       Dark luxury overlay, photo corner
+       ════════════════════════════════ */
+    .ad1 {
+      background: #0d1f35;
+    }
+    .ad1-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=90');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+    }
+    .ad1-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(13,31,53,0.92) 0%, rgba(13,31,53,0.6) 60%, rgba(13,31,53,0.4) 100%);
+    }
+    .ad1-content {
+      position: absolute; inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 72px;
+    }
+    .ad1-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .ad1-logo {
+      display: flex;
+      flex-direction: column;
+    }
+    .ad1-logo .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+    .ad1-logo .brokerage {
+      font-size: 13px;
+      color: #c9973a;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .ad1-badge {
+      background: #c9973a;
+      color: #0d1f35;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 3px;
+    }
+
+    .ad1-headline {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 0;
+    }
+    .ad1-headline .eyebrow {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c9973a;
+      margin-bottom: 24px;
+    }
+    .ad1-headline h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 96px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 32px;
+    }
+    .ad1-headline h1 em {
+      font-style: italic;
+      color: #d4a541;
+    }
+    .ad1-headline .sub {
+      font-size: 26px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
+      max-width: 680px;
+      font-weight: 400;
+    }
+
+    .ad1-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .ad1-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ad1-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ad1-contact-icon {
+      width: 36px; height: 36px;
+      background: rgba(201,151,58,0.2);
+      border: 1px solid rgba(201,151,58,0.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ad1-contact-item span {
+      font-size: 22px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.3px;
+    }
+    .ad1-photo {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #c9973a;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+    .ad1-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .ad1-divider {
+      width: 80px; height: 3px;
+      background: #c9973a;
+      margin-bottom: 40px;
+    }
+
+    /* ════════════════════════════════
+       AD 2 — "Your Home Could Be Worth More"
+       Clean white premium feel
+       ════════════════════════════════ */
+    .ad2 {
+      background: #f9f7f4;
+    }
+    .ad2-left-bar {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 12px;
+      background: #c9973a;
+    }
+    .ad2-content {
+      position: absolute; inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+    }
+    .ad2-text {
+      padding: 80px 60px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .ad2-logo .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #0d1f35;
+    }
+    .ad2-logo .brokerage {
+      font-size: 12px;
+      color: #b8872a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+    .ad2-mid {}
+    .ad2-mid .tag {
+      display: inline-block;
+      background: #0d1f35;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+    .ad2-mid h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 76px;
+      font-weight: 700;
+      color: #0d1f35;
+      line-height: 1.08;
+      margin-bottom: 28px;
+    }
+    .ad2-mid h1 span { color: #b8872a; }
+    .ad2-mid .sub {
+      font-size: 22px;
+      color: #666;
+      line-height: 1.6;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .ad2-mid .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #0d1f35;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 20px 36px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+    .ad2-bottom {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .ad2-bottom .phone {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #b8872a;
+    }
+    .ad2-bottom .cal {
+      font-size: 13px;
+      color: #999;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .ad2-photo-col {
+      position: relative;
+      background: #0d1f35;
+      overflow: hidden;
+    }
+    .ad2-photo-col img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.75;
+    }
+    .ad2-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(13,31,53,0.9) 100%);
+    }
+    .ad2-photo-caption {
+      position: absolute;
+      bottom: 50px;
+      left: 0; right: 0;
+      text-align: center;
+    }
+    .ad2-photo-caption .pname {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .ad2-photo-caption .ptitle {
+      font-size: 14px;
+      color: #c9973a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    .ad2-gold-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8px;
+      background: #c9973a;
+    }
+
+    /* ════════════════════════════════
+       AD 3 — "Now Is The Time To Sell"
+       Dramatic full-bleed luxury home
+       ════════════════════════════════ */
+    .ad3 {
+      background: #000;
+    }
+    .ad3-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=90');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    .ad3-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(0,0,0,0.2) 0%,
+        rgba(0,0,0,0.15) 30%,
+        rgba(13,31,53,0.85) 65%,
+        rgba(13,31,53,0.97) 100%);
+    }
+    .ad3-content {
+      position: absolute; inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 72px;
+    }
+    .ad3-top-logo {
+      position: absolute;
+      top: 60px; left: 72px; right: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ad3-top-logo .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .ad3-top-logo .brokerage {
+      font-size: 12px;
+      color: #c9973a;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+    .ad3-top-logo .photo-small {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #c9973a;
+    }
+    .ad3-top-logo .photo-small img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .ad3-bottom {
+      display: flex;
+      flex-direction: column;
+    }
+    .ad3-eyebrow {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c9973a;
+      margin-bottom: 20px;
+    }
+    .ad3-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 100px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.0;
+      margin-bottom: 28px;
+    }
+    .ad3-headline em { font-style: italic; color: #d4a541; }
+    .ad3-sub {
+      font-size: 24px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+    .ad3-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .ad3-cta {
+      background: #c9973a;
+      color: #0d1f35;
+      font-size: 20px;
+      font-weight: 800;
+      padding: 22px 48px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .ad3-phone {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .ad3-phone span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 4px;
+    }
+
+    /* ════════════════════════════════
+       AD 4 — "Free Home Valuation"
+       Clean split — offer focused
+       ════════════════════════════════ */
+    .ad4 {
+      background: #0d1f35;
+    }
+    .ad4-top-band {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 10px;
+      background: #c9973a;
+    }
+    .ad4-content {
+      position: absolute; inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      text-align: center;
+    }
+    .ad4-photo-ring {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 6px solid #c9973a;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 0 0 12px rgba(201,151,58,0.15);
+    }
+    .ad4-photo-ring img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .ad4-offer-tag {
+      background: #c9973a;
+      color: #0d1f35;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 50px;
+      margin-bottom: 36px;
+    }
+    .ad4-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 88px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+    .ad4-headline em { font-style: italic; color: #d4a541; }
+    .ad4-sub {
+      font-size: 24px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      max-width: 680px;
+      margin-bottom: 52px;
+    }
+    .ad4-divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .ad4-divider-line { flex: 1; height: 1px; background: rgba(201,151,58,0.3); }
+    .ad4-divider-dot { width: 8px; height: 8px; background: #c9973a; border-radius: 50%; }
+    .ad4-contact-grid {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+    .ad4-contact-item { text-align: center; }
+    .ad4-contact-item .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .ad4-contact-item .value {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #c9973a;
+    }
+    .ad4-footer {
+      font-size: 14px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .ad4-bottom-band {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 10px;
+      background: #c9973a;
+    }
+
+    /* ════════════════════════════════
+       PRINT INSTRUCTIONS
+       ════════════════════════════════ */
+    .instructions {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 2rem 2.5rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .instructions h3 {
+      font-size: 1rem;
+      color: #c9973a;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .instructions p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+    .instructions strong { color: rgba(255,255,255,0.8); }
+  </style>
+</head>
+<body>
+
+<p class="page-label">Ashley Arana — Social Media Ads &bull; Screenshot Each Ad to Save</p>
+
+<!-- ══════════════════════════════════ -->
+<!-- AD 1: THINKING OF SELLING?        -->
+<!-- ══════════════════════════════════ -->
+<div class="ad-section">
+  <p class="ad-tag">Ad 1 of 4 &bull; Instagram / Facebook Square &bull; Dark Luxury</p>
+  <div class="ad ad-scaled">
+    <div class="ad1">
+      <div class="ad1-bg"></div>
+      <div class="ad1-overlay"></div>
+      <div class="ad1-content">
+        <div class="ad1-top">
+          <div class="ad1-logo">
+            <span class="name">Ashley Arana</span>
+            <span class="brokerage">Main Street Realtors &bull; Rancho Cucamonga</span>
+          </div>
+          <div class="ad1-badge">Free Consultation</div>
+        </div>
+
+        <div class="ad1-headline">
+          <span class="eyebrow">Thinking About Selling?</span>
+          <div class="ad1-divider"></div>
+          <h1>Your Home<br />Deserves the<br /><em>Best Agent.</em></h1>
+          <p class="sub">I'll price it right, market it professionally, and negotiate every dollar you deserve. Let's talk — no pressure, no obligation.</p>
+        </div>
+
+        <div class="ad1-bottom">
+          <div class="ad1-contact">
+            <div class="ad1-contact-item">
+              <div class="ad1-contact-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <span>(909) 837-8058</span>
+            </div>
+            <div class="ad1-contact-item">
+              <div class="ad1-contact-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <span>Rancho Cucamonga &amp; Inland Empire</span>
+            </div>
+          </div>
+          <div class="ad1-photo">
+            <img src="ashley.jpg" alt="Ashley Arana" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- AD 2: YOUR HOME COULD BE WORTH MORE -->
+<!-- ══════════════════════════════════ -->
+<div class="ad-section">
+  <p class="ad-tag">Ad 2 of 4 &bull; Instagram / Facebook Square &bull; Clean White Split</p>
+  <div class="ad ad-scaled">
+    <div class="ad2">
+      <div class="ad2-left-bar"></div>
+      <div class="ad2-content">
+        <div class="ad2-text">
+          <div class="ad2-logo">
+            <div class="name">Ashley Arana</div>
+            <div class="brokerage">Main Street Realtors</div>
+          </div>
+          <div class="ad2-mid">
+            <div class="tag">Sellers — Listen Up</div>
+            <h1>Your Home<br />Could Be Worth<br /><span>More Than<br />You Think.</span></h1>
+            <p class="sub">The Inland Empire market is moving fast. Find out exactly what your home is worth — free, no strings attached.</p>
+            <div class="cta">
+              Get My Free Home Value &rarr;
+            </div>
+          </div>
+          <div class="ad2-bottom">
+            <div>
+              <div class="cal">Call or text today</div>
+              <div class="phone">(909) 837-8058</div>
+            </div>
+          </div>
+        </div>
+        <div class="ad2-photo-col">
+          <img src="ashley.jpg" alt="Ashley Arana" />
+          <div class="ad2-photo-overlay"></div>
+          <div class="ad2-photo-caption">
+            <div class="pname">Ashley Arana</div>
+            <div class="ptitle">Your Local Expert</div>
+          </div>
+          <div class="ad2-gold-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- AD 3: NOW IS THE TIME TO SELL     -->
+<!-- ══════════════════════════════════ -->
+<div class="ad-section">
+  <p class="ad-tag">Ad 3 of 4 &bull; Instagram / Facebook Square &bull; Dramatic Full-Bleed</p>
+  <div class="ad ad-scaled">
+    <div class="ad3">
+      <div class="ad3-bg"></div>
+      <div class="ad3-overlay"></div>
+      <div class="ad3-top-logo">
+        <div>
+          <div class="name">Ashley Arana</div>
+          <div class="brokerage">Main Street Realtors &bull; Rancho Cucamonga</div>
+        </div>
+        <div class="photo-small">
+          <img src="ashley.jpg" alt="Ashley Arana" />
+        </div>
+      </div>
+      <div class="ad3-content">
+        <div class="ad3-bottom">
+          <div class="ad3-eyebrow">Inland Empire Home Sellers</div>
+          <h2 class="ad3-headline">Now Is the<br /><em>Time to Sell.</em></h2>
+          <p class="ad3-sub">Buyers are active. Inventory is low. If you've been thinking about listing, the conditions are in your favor right now — and I'm here to make sure you get top dollar.</p>
+          <div class="ad3-cta-row">
+            <div class="ad3-cta">Let's Talk — It's Free</div>
+            <div class="ad3-phone">
+              <span>Call or Text</span>
+              (909) 837-8058
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- AD 4: FREE HOME VALUATION         -->
+<!-- ══════════════════════════════════ -->
+<div class="ad-section">
+  <p class="ad-tag">Ad 4 of 4 &bull; Instagram / Facebook Square &bull; Offer-Focused Dark</p>
+  <div class="ad ad-scaled">
+    <div class="ad4">
+      <div class="ad4-top-band"></div>
+      <div class="ad4-content">
+        <div class="ad4-photo-ring">
+          <img src="ashley.jpg" alt="Ashley Arana" />
+        </div>
+        <div class="ad4-offer-tag">✦ 100% Free — No Obligation ✦</div>
+        <h2 class="ad4-headline">What Is Your<br /><em>Home Worth?</em></h2>
+        <p class="ad4-sub">I'll give you a detailed, accurate home valuation based on real market data — so you know exactly where you stand before you decide anything.</p>
+        <div class="ad4-divider">
+          <div class="ad4-divider-line"></div>
+          <div class="ad4-divider-dot"></div>
+          <div class="ad4-divider-line"></div>
+        </div>
+        <div class="ad4-contact-grid">
+          <div class="ad4-contact-item">
+            <div class="label">Call or Text</div>
+            <div class="value">(909) 837-8058</div>
+          </div>
+          <div class="ad4-contact-item">
+            <div class="label">Serving</div>
+            <div class="value" style="font-size:22px;">Inland Empire</div>
+          </div>
+        </div>
+        <div class="ad4-footer">Ashley Arana &bull; Main Street Realtors &bull; Rancho Cucamonga, CA</div>
+      </div>
+      <div class="ad4-bottom-band"></div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTRUCTIONS -->
+<div class="instructions">
+  <h3>How to Save Each Ad</h3>
+  <p>
+    <strong>On Windows:</strong> Press <strong>Win + Shift + S</strong>, select "Window Snip," then click this browser window. Each ad is a separate square — snip one at a time.<br /><br />
+    <strong>Best quality:</strong> Right-click this page → <strong>Print → Save as PDF</strong>, or use your browser's zoom at 100% before snipping.<br /><br />
+    <strong>Recommended size when posting:</strong> Instagram square = 1080×1080px &bull; Facebook feed = 1200×1200px
+  </p>
+</div>
+
+</body>
+</html>

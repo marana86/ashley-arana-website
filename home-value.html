@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's My Home Worth? | Ashley Arana | Main Street Realtors</title>
+  <meta name="description" content="Find out exactly what your Inland Empire home is worth in today's market. Free, no-obligation home valuation from Ashley Arana, Main Street Realtors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1f35;
+      --navy-mid: #16344f;
+      --gold: #b8872a;
+      --gold-light: #d4a541;
+      --white: #ffffff;
+      --off-white: #f9f7f4;
+      --border: #e2dfd9;
+      --gray: #9a9a9a;
+      --dark-gray: #444;
+      --green: #27ae60;
+      --radius: 4px;
+      --shadow: 0 8px 30px rgba(0,0,0,0.1);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── STICKY TOP BAR ── */
+    .top-bar {
+      background: var(--navy);
+      padding: 0.6rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--gold);
+    }
+    .top-bar-left {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .top-bar-left .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .top-bar-left .broker {
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .top-bar-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+    .top-bar-phone strong { color: var(--white); font-weight: 600; }
+    .top-bar-cta {
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #142233 50%, #1a2f47 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+    }
+    .hero-grid-overlay {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(184,135,42,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,135,42,0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 5%;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Hero Left */
+    .hero-left {}
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(184,135,42,0.15);
+      border: 1px solid rgba(184,135,42,0.3);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Proof Points */
+    .proof-points {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .proof-check {
+      width: 22px; height: 22px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Agent strip */
+    .agent-strip {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0.9rem 1.25rem;
+    }
+    .agent-strip-photo {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+    }
+    .agent-strip-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .agent-strip-info .agent-name {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .agent-strip-info .agent-title {
+      font-size: 0.72rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .agent-strip-stats {
+      margin-left: auto;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .agent-stat { text-align: center; }
+    .agent-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .agent-stat .lbl {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── MULTI-STEP FORM CARD ── */
+    .form-card {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .form-card-header {
+      background: var(--navy);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .form-card-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .form-card-header p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Progress bar */
+    .form-progress {
+      padding: 1rem 2rem 0;
+      background: var(--off-white);
+    }
+    .progress-steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .progress-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .step-circle {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--border);
+      color: var(--gray);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+    .step-circle.active { background: var(--gold); color: var(--navy); }
+    .step-circle.done { background: var(--green); color: white; }
+    .step-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+    .step-label.active { color: var(--navy); }
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      margin: 0 0.5rem;
+      transition: background 0.3s;
+    }
+    .step-line.done { background: var(--green); }
+
+    /* Form Body */
+    .form-body {
+      padding: 1.75rem 2rem 2rem;
+      background: var(--off-white);
+    }
+
+    /* Step panels */
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .step-sub {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 1.25rem;
+    }
+
+    .form-field {
+      margin-bottom: 1rem;
+    }
+    .form-field label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--dark-gray);
+      margin-bottom: 0.35rem;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--navy);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(184,135,42,0.12);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+    /* Radio/pill selectors */
+    .pill-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+    .pill-group.three { grid-template-columns: repeat(3, 1fr); }
+    .pill-label {
+      display: block;
+      cursor: pointer;
+    }
+    .pill-label input { display: none; }
+    .pill-label span {
+      display: block;
+      text-align: center;
+      padding: 0.65rem 0.5rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--dark-gray);
+      background: var(--white);
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .pill-label input:checked + span {
+      border-color: var(--gold);
+      background: rgba(184,135,42,0.08);
+      color: var(--navy);
+    }
+    .pill-label span:hover { border-color: var(--gold); }
+
+    /* Buttons */
+    .btn-next {
+      width: 100%;
+      padding: 0.95rem;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1.25rem;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .btn-next:hover { background: var(--navy-mid); transform: translateY(-1px); }
+    .btn-next.gold { background: var(--gold); color: var(--navy); }
+    .btn-next.gold:hover { background: var(--gold-light); }
+    .btn-back {
+      background: none;
+      border: none;
+      color: var(--gray);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.75rem;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-back:hover { color: var(--navy); }
+
+    .form-privacy {
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--gray);
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    /* ── SUCCESS PANEL ── */
+    .success-panel {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: var(--off-white);
+    }
+    .success-icon {
+      width: 72px; height: 72px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .success-panel h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .success-panel p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; }
+    .success-panel .call-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      margin-top: 1.25rem;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--gold);
+      padding: 0.85rem 5%;
+    }
+    .trust-strip-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how { padding: 5rem 5%; background: var(--white); }
+    .how-inner { max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--navy); margin-bottom: 1rem; }
+    .section-sub { font-size: 0.96rem; color: var(--gray); line-height: 1.75; max-width: 560px; }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 0 auto; }
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(16.66% + 20px);
+      right: calc(16.66% + 20px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      opacity: 0.25;
+    }
+    .how-step { text-align: center; }
+    .how-step-num {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold-light);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      border: 3px solid var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+    .how-step h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .how-step p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── WHAT YOU GET ── */
+    .what-you-get { padding: 5rem 5%; background: var(--off-white); }
+    .wyg-inner { max-width: 1100px; margin: 0 auto; }
+    .wyg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .wyg-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .wyg-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .wyg-icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .wyg-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+    .wyg-item p { font-size: 0.82rem; color: var(--gray); line-height: 1.55; }
+    .wyg-photo {
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .wyg-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .wyg-photo-badge {
+      position: absolute;
+      bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+      background: rgba(13,31,53,0.92);
+      backdrop-filter: blur(6px);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(184,135,42,0.3);
+    }
+    .wyg-photo-badge .badge-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.15rem;
+    }
+    .wyg-photo-badge .badge-title {
+      font-size: 0.68rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+    .wyg-photo-badge .badge-phone {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      margin-top: 0.4rem;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-section { padding: 5rem 5%; background: var(--white); }
+    .reviews-inner { max-width: 1100px; margin: 0 auto; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .review-card {
+      padding: 1.75rem;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .review-stars { color: #f4b942; font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+    .review-text { font-size: 0.88rem; color: var(--dark-gray); line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+    .review-author { display: flex; align-items: center; gap: 0.65rem; }
+    .review-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--navy); color: var(--gold-light);
+      font-size: 0.78rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .review-name { font-size: 0.83rem; font-weight: 700; color: var(--navy); }
+    .review-location { font-size: 0.7rem; color: var(--gray); }
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta {
+      background: var(--navy);
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .bottom-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .bottom-cta p { font-size: 1rem; color: rgba(255,255,255,0.55); margin-bottom: 2rem; }
+    .bottom-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-gold-lg {
+      padding: 1rem 2.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-gold-lg:hover { background: var(--gold-light); }
+    .btn-outline-lg {
+      padding: 1rem 2.5rem;
+      border: 2px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-outline-lg:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #07111c;
+      padding: 2rem 5%;
+      text-align: center;
+    }
+    footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); line-height: 1.7; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .how-steps { grid-template-columns: 1fr; }
+      .how-steps::before { display: none; }
+      .wyg-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .wyg-photo { max-width: 360px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .agent-strip-stats { display: none; }
+      .top-bar-right .top-bar-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .trust-strip-inner { gap: 1rem; }
+      .trust-item { font-size: 0.72rem; }
+      .pill-group.three { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<header class="top-bar">
+  <div class="top-bar-left">
+    <span class="name">Ashley Arana</span>
+    <span class="broker">Main Street Realtors &bull; Rancho Cucamonga</span>
+  </div>
+  <div class="top-bar-right">
+    <a href="tel:+19098378058" class="top-bar-phone">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <strong>(909) 837-8058</strong>
+    </a>
+    <a href="#form" class="top-bar-cta">Get My Free Value</a>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Free &bull; No Obligation &bull; Inland Empire
+      </div>
+      <h1 class="hero-title">
+        What Is Your<br />Home <em>Really</em><br />Worth?
+      </h1>
+      <p class="hero-sub">
+        The Inland Empire market is moving — and your home may be worth more than you think. Get a precise, data-driven valuation from a local expert who knows this market inside and out.
+      </p>
+      <div class="proof-points">
+        <div class="proof-item">
+          <div class="proof-check">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Accurate valuation based on real, current market data
+        </div>
+        <div class="proof-item">
+          <div class="proof-check">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          No cost, no pressure, no commitment required
+        </div>
+        <div class="proof-item">
+          <div class="proof-check">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Response within 24 hours — often same day
+        </div>
+        <div class="proof-item">
+          <div class="proof-check">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          200+ families helped across the Inland Empire
+        </div>
+      </div>
+      <div class="agent-strip">
+        <div class="agent-strip-photo">
+          <img src="ashley.jpg" alt="Ashley Arana" />
+        </div>
+        <div class="agent-strip-info">
+          <div class="agent-name">Ashley Arana</div>
+          <div class="agent-title">Main Street Realtors &bull; Rancho Cucamonga</div>
+        </div>
+        <div class="agent-strip-stats">
+          <div class="agent-stat"><div class="num">200+</div><div class="lbl">Sold</div></div>
+          <div class="agent-stat"><div class="num">10+</div><div class="lbl">Years</div></div>
+          <div class="agent-stat"><div class="num">5★</div><div class="lbl">Rated</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MULTI-STEP FORM ── -->
+    <div class="form-card" id="form">
+      <div class="form-card-header">
+        <h3>Get Your Free Home Value</h3>
+        <p>Takes less than 60 seconds &bull; 100% free</p>
+      </div>
+
+      <!-- Progress -->
+      <div class="form-progress">
+        <div class="progress-steps">
+          <div class="progress-step">
+            <div class="step-circle active" id="circle1">1</div>
+            <div class="step-label active" id="label1">Property</div>
+          </div>
+          <div class="step-line" id="line1"></div>
+          <div class="progress-step">
+            <div class="step-circle" id="circle2">2</div>
+            <div class="step-label" id="label2">Details</div>
+          </div>
+          <div class="step-line" id="line2"></div>
+          <div class="progress-step">
+            <div class="step-circle" id="circle3">3</div>
+            <div class="step-label" id="label3">Contact</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-body" id="formBody">
+
+        <!-- STEP 1: Property Address -->
+        <div class="step-panel active" id="step1">
+          <div class="step-title">Where is your property?</div>
+          <div class="step-sub">Enter your home address to get started</div>
+          <div class="form-field">
+            <label>Street Address</label>
+            <input type="text" id="f-address" placeholder="e.g. 1234 Maple Drive" />
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>City</label>
+              <input type="text" id="f-city" placeholder="Rancho Cucamonga" />
+            </div>
+            <div class="form-field">
+              <label>Zip Code</label>
+              <input type="text" id="f-zip" placeholder="91730" maxlength="5" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Property Type</label>
+            <div class="pill-group">
+              <label class="pill-label"><input type="radio" name="type" value="Single Family" checked /><span>Single Family</span></label>
+              <label class="pill-label"><input type="radio" name="type" value="Condo/Townhome" /><span>Condo / Townhome</span></label>
+              <label class="pill-label"><input type="radio" name="type" value="Multi-Family" /><span>Multi-Family</span></label>
+              <label class="pill-label"><input type="radio" name="type" value="Other" /><span>Other</span></label>
+            </div>
+          </div>
+          <button class="btn-next" onclick="goStep(2)">
+            Next — Home Details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="form-privacy">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Your information is private and never shared.
+          </p>
+        </div>
+
+        <!-- STEP 2: Home Details -->
+        <div class="step-panel" id="step2">
+          <div class="step-title">Tell us about your home</div>
+          <div class="step-sub">Helps Ashley give you the most accurate valuation</div>
+          <div class="form-field">
+            <label>Bedrooms</label>
+            <div class="pill-group three">
+              <label class="pill-label"><input type="radio" name="beds" value="2" /><span>2</span></label>
+              <label class="pill-label"><input type="radio" name="beds" value="3" checked /><span>3</span></label>
+              <label class="pill-label"><input type="radio" name="beds" value="4" /><span>4</span></label>
+              <label class="pill-label"><input type="radio" name="beds" value="5" /><span>5</span></label>
+              <label class="pill-label"><input type="radio" name="beds" value="6+" /><span>6+</span></label>
+              <label class="pill-label"><input type="radio" name="beds" value="1" /><span>1</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Bathrooms</label>
+            <div class="pill-group three">
+              <label class="pill-label"><input type="radio" name="baths" value="1" /><span>1</span></label>
+              <label class="pill-label"><input type="radio" name="baths" value="1.5" /><span>1.5</span></label>
+              <label class="pill-label"><input type="radio" name="baths" value="2" checked /><span>2</span></label>
+              <label class="pill-label"><input type="radio" name="baths" value="2.5" /><span>2.5</span></label>
+              <label class="pill-label"><input type="radio" name="baths" value="3" /><span>3</span></label>
+              <label class="pill-label"><input type="radio" name="baths" value="3+" /><span>3+</span></label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Approx. Sq Footage</label>
+              <input type="text" id="f-sqft" placeholder="e.g. 1,850" />
+            </div>
+            <div class="form-field">
+              <label>Year Built (approx)</label>
+              <input type="text" id="f-year" placeholder="e.g. 1995" maxlength="4" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Overall Condition</label>
+            <div class="pill-group">
+              <label class="pill-label"><input type="radio" name="condition" value="Excellent" /><span>Excellent</span></label>
+              <label class="pill-label"><input type="radio" name="condition" value="Good" checked /><span>Good</span></label>
+              <label class="pill-label"><input type="radio" name="condition" value="Fair" /><span>Fair</span></label>
+              <label class="pill-label"><input type="radio" name="condition" value="Needs Work" /><span>Needs Work</span></label>
+            </div>
+          </div>
+          <button class="btn-next" onclick="goStep(3)">
+            Next — Your Contact Info
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <button class="btn-back" onclick="goStep(1)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back
+          </button>
+        </div>
+
+        <!-- STEP 3: Contact Info -->
+        <div class="step-panel" id="step3">
+          <div class="step-title">Almost done!</div>
+          <div class="step-sub">Where should Ashley send your valuation?</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>First Name</label>
+              <input type="text" id="f-first" placeholder="Jane" />
+            </div>
+            <div class="form-field">
+              <label>Last Name</label>
+              <input type="text" id="f-last" placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Email Address</label>
+            <input type="email" id="f-email" placeholder="jane@email.com" />
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="(909) 555-0000" />
+          </div>
+          <div class="form-field">
+            <label>When Are You Thinking of Selling?</label>
+            <div class="pill-group">
+              <label class="pill-label"><input type="radio" name="timeline" value="ASAP" /><span>ASAP</span></label>
+              <label class="pill-label"><input type="radio" name="timeline" value="1-3 Months" checked /><span>1–3 Months</span></label>
+              <label class="pill-label"><input type="radio" name="timeline" value="3-6 Months" /><span>3–6 Months</span></label>
+              <label class="pill-label"><input type="radio" name="timeline" value="Just Curious" /><span>Just Curious</span></label>
+            </div>
+          </div>
+          <button class="btn-next gold" onclick="submitForm()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Send Me My Free Home Value
+          </button>
+          <button class="btn-back" onclick="goStep(2)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back
+          </button>
+          <p class="form-privacy">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            100% private. Your info is never sold or shared.
+          </p>
+        </div>
+
+      </div><!-- /form-body -->
+
+      <!-- SUCCESS -->
+      <div class="success-panel" id="successPanel">
+        <div class="success-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>You're All Set!</h3>
+        <p>Ashley has received your request and will reach out with your personalized home valuation within 24 hours — usually much sooner.</p>
+        <p style="margin-top:0.75rem;">Want to talk right now?</p>
+        <a href="tel:+19098378058" class="call-now">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Ashley Now — (909) 837-8058
+        </a>
+      </div>
+    </div><!-- /form-card -->
+
+  </div>
+</section>
+
+<!-- ── TRUST STRIP ── -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      No Cost &bull; No Obligation
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Local Inland Empire Expert
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      200+ Homes Sold
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      5-Star Rated Agent
+    </div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d1f35" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Response Within 24 Hours
+    </div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how">
+  <div class="how-inner">
+    <div class="text-center">
+      <p class="section-label">Simple Process</p>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Getting your free home valuation from Ashley takes less than a minute — here's exactly what happens next.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <h4>Submit Your Property Info</h4>
+        <p>Fill out the short form above with your address and a few details about your home. Takes under 60 seconds.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <h4>Ashley Reviews the Data</h4>
+        <p>Ashley analyzes recent comparable sales, market trends, and your home's unique features to build your valuation.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <h4>You Get Your Number</h4>
+        <p>Ashley contacts you personally — usually same day — with your home's current market value and a clear breakdown of how she got there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU GET ── -->
+<section class="what-you-get">
+  <div class="wyg-inner">
+    <div style="margin-bottom:0">
+      <p class="section-label">What's Included</p>
+      <h2 class="section-title">More Than Just a Number</h2>
+      <p class="section-sub">Ashley's free valuation gives you real information to make a confident decision — not a guess.</p>
+    </div>
+    <div class="wyg-grid">
+      <div class="wyg-list">
+        <div class="wyg-item">
+          <div class="wyg-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h4>Comparable Sales Analysis</h4>
+            <p>A breakdown of what similar homes in your area have recently sold for — so you can see exactly where yours stands.</p>
+          </div>
+        </div>
+        <div class="wyg-item">
+          <div class="wyg-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h4>Current Market Conditions</h4>
+            <p>Is it a buyer's or seller's market right now in your neighborhood? Ashley tells you the truth — not what you want to hear.</p>
+          </div>
+        </div>
+        <div class="wyg-item">
+          <div class="wyg-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Estimated Days on Market</h4>
+            <p>How long homes like yours are typically taking to sell, so you can plan your timeline with confidence.</p>
+          </div>
+        </div>
+        <div class="wyg-item">
+          <div class="wyg-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <h4>Recommended List Price Range</h4>
+            <p>A strategic pricing recommendation designed to attract competitive offers while maximizing your final sale price.</p>
+          </div>
+        </div>
+        <div class="wyg-item">
+          <div class="wyg-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9973a" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Personal Consultation</h4>
+            <p>Ashley will walk you through everything personally — no automated report, no sales pressure. Just honest expert advice.</p>
+          </div>
+        </div>
+      </div>
+      <div class="wyg-photo">
+        <img src="ashley.jpg" alt="Ashley Arana — Your Inland Empire Home Valuation Expert" />
+        <div class="wyg-photo-badge">
+          <div class="badge-name">Ashley Arana</div>
+          <div class="badge-title">Main Street Realtors &bull; Rancho Cucamonga</div>
+          <div class="badge-phone">(909) 837-8058</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="text-center">
+      <p class="section-label">Client Stories</p>
+      <h2 class="section-title">Sellers Who Trusted Ashley</h2>
+      <p class="section-sub">Real results from real homeowners across the Inland Empire.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Ashley priced our home perfectly and had it under contract in 6 days — $38,000 over asking. She knew exactly what buyers in our neighborhood were looking for. Honestly blown away by the result."</p>
+        <div class="review-author">
+          <div class="review-avatar">CR</div>
+          <div>
+            <div class="review-name">Carlos &amp; Rosa M.</div>
+            <div class="review-location">Home Sellers — Rancho Cucamonga, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"We weren't sure if the timing was right to sell. Ashley sat down with us, walked us through the numbers, and gave us an honest picture of the market. We listed two weeks later and sold for more than we ever expected."</p>
+        <div class="review-author">
+          <div class="review-avatar">WL</div>
+          <div>
+            <div class="review-name">The Williams Family</div>
+            <div class="review-location">Home Sellers — Glendora, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I called Ashley just to find out what my house was worth — no plans to sell. She was honest, thorough, and zero pressure. Six months later when I was ready, she was the only person I called. She got us full asking price."</p>
+        <div class="review-author">
+          <div class="review-avatar">MV</div>
+          <div>
+            <div class="review-name">Marcus V.</div>
+            <div class="review-location">Home Seller — Upland, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOTTOM CTA ── -->
+<section class="bottom-cta">
+  <h2>Ready to Find Out What Your<br />Home Is Worth?</h2>
+  <p>It's free, it's fast, and it could change everything. No commitment required.</p>
+  <div class="bottom-cta-btns">
+    <a href="#form" class="btn-gold-lg">Get My Free Valuation</a>
+    <a href="tel:+19098378058" class="btn-outline-lg">Call Ashley — (909) 837-8058</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    &copy; 2026 Ashley Arana &bull; Main Street Realtors &bull; Rancho Cucamonga, CA<br />
+    CA DRE License #00000000 &bull; <a href="index.html">Main Website</a> &bull; <a href="tel:+19098378058">(909) 837-8058</a>
+  </p>
+</footer>
+
+<script>
+  let currentStep = 1;
+
+  function goStep(n) {
+    document.getElementById('step' + currentStep).classList.remove('active');
+    document.getElementById('circle' + currentStep).classList.remove('active');
+    document.getElementById('label' + currentStep).classList.remove('active');
+
+    if (n > currentStep) {
+      document.getElementById('circle' + currentStep).classList.add('done');
+      document.getElementById('circle' + currentStep).innerHTML = '✓';
+      if (currentStep < 3) document.getElementById('line' + currentStep).classList.add('done');
+    } else {
+      document.getElementById('circle' + currentStep).classList.remove('done');
+      document.getElementById('circle' + currentStep).innerHTML = currentStep;
+      if (currentStep > 1) document.getElementById('line' + (currentStep-1)).classList.remove('done');
+    }
+
+    currentStep = n;
+    document.getElementById('step' + currentStep).classList.add('active');
+    document.getElementById('circle' + currentStep).classList.add('active');
+    document.getElementById('circle' + currentStep).classList.remove('done');
+    document.getElementById('circle' + currentStep).innerHTML = currentStep;
+    document.getElementById('label' + currentStep).classList.add('active');
+
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function submitForm() {
+    const first = document.getElementById('f-first').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    if (!first || !email) {
+      alert('Please enter your name and email to continue.');
+      return;
+    }
+    document.getElementById('formBody').style.display = 'none';
+    document.querySelector('.form-progress').style.display = 'none';
+    document.getElementById('successPanel').style.display = 'block';
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href="#form"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
