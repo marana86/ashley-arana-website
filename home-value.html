@@ -808,7 +808,7 @@
       <div class="agent-strip">
         <div class="agent-strip-info">
           <div class="agent-name">Main Street Realtors &bull; Rancho Cucamonga</div>
-          <div class="agent-title">(909) 837-8058 &bull; <a href="mailto:Ashley@ashleyaranahomes.com" style="color:var(--gold);text-decoration:none;">Ashley@ashleyaranahomes.com</a></div>
+          <div class="agent-title">(909) 837-8058 &bull; <a href="mailto:Ashley@ashleyaranahomes.com" style="color:var(--gold);text-decoration:none;text-transform:uppercase;">ASHLEY@ASHLEYARANAHOMES.COM</a></div>
         </div>
         <div class="agent-strip-stats">
           <div class="agent-stat"><div class="num">200+</div><div class="lbl">Sold</div></div>
@@ -1186,7 +1186,7 @@
 <footer>
   <p>
     &copy; 2026 Ashley Arana &bull; Main Street Realtors &bull; Rancho Cucamonga, CA<br />
-    CA DRE #02007681 &bull; <a href="mailto:Ashley@ashleyaranahomes.com">Ashley@ashleyaranahomes.com</a> &bull; <a href="tel:+19098378058">(909) 837-8058</a> &bull; <a href="index.html">Main Website</a>
+    CA DRE #02007681 &bull; <a href="mailto:Ashley@ashleyaranahomes.com" style="text-transform:uppercase;">ASHLEY@ASHLEYARANAHOMES.COM</a> &bull; <a href="tel:+19098378058">(909) 837-8058</a> &bull; <a href="index.html">Main Website</a>
   </p>
 </footer>
 
@@ -1228,6 +1228,7 @@
     const getRadio = name => { const el = document.querySelector(`input[name="${name}"]:checked`); return el ? el.value : ''; };
     const data = {
       _subject: 'New Home Value Request — AshleyAranaHomes.com',
+      _cc: '9098378058@tmomail.net',
       'First Name': first,
       'Last Name': document.getElementById('f-last').value.trim(),
       'Email': email,

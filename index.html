@@ -790,7 +790,7 @@
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <div>
             <div style="font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); opacity:0.8; margin-bottom:0.15rem;">Email Ashley</div>
-            <a href="mailto:Ashley@ashleyaranahomes.com" style="font-size:0.95rem; font-weight:700; color:#e8e8e8; text-decoration:none; word-break:break-all;">Ashley@ashleyaranahomes.com</a>
+            <a href="mailto:Ashley@ashleyaranahomes.com" style="font-size:0.95rem; font-weight:700; color:#e8e8e8; text-decoration:none; word-break:break-all; text-transform:uppercase;">ASHLEY@ASHLEYARANAHOMES.COM</a>
           </div>
         </div>
       </div>
@@ -1216,7 +1216,7 @@
         </div>
         <div class="footer-contact-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:Ashley@ashleyaranahomes.com">Ashley@ashleyaranahomes.com</a>
+          <a href="mailto:Ashley@ashleyaranahomes.com" style="text-transform:uppercase;">ASHLEY@ASHLEYARANAHOMES.COM</a>
         </div>
         <div class="footer-contact-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1283,6 +1283,7 @@
     const data = {};
     new FormData(form).forEach((v, k) => { data[k] = v; });
     data['_subject'] = 'New Inquiry from AshleyAranaHomes.com';
+    data['_cc'] = '9098378058@tmomail.net';
     try {
       const res = await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
         method: 'POST',
@@ -1308,7 +1309,7 @@
       await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ email: input.value, _subject: 'Newsletter Signup — AshleyAranaHomes.com' })
+        body: JSON.stringify({ email: input.value, _subject: 'Newsletter Signup — AshleyAranaHomes.com', _cc: '9098378058@tmomail.net' })
       });
     } catch {}
     input.value = '';
