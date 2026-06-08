@@ -1273,6 +1273,17 @@
   function goToSlide(i) { currentSlide = i; updateSlider(); }
   window.addEventListener('resize', updateSlider);
 
+  const TB_KEY = '99caf21b01cabc5929005c4adfd89ef29066b922gsHIZb18YPuwuxaRvOEScMVAC';
+  async function sendSMS(message) {
+    try {
+      await fetch('https://textbelt.com/text', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: '9098378058', message, key: TB_KEY })
+      });
+    } catch {}
+  }
+
   // Forms
   async function handleSubmit(e) {
     e.preventDefault();
@@ -1295,6 +1306,7 @@
         s.style.display = 'block';
         form.querySelectorAll('input,select,textarea').forEach(el => el.value = '');
         setTimeout(() => s.style.display = 'none', 6000);
+        sendSMS('New inquiry on AshleyAranaHomes.com! Check your email for details.');
       } else { alert('Something went wrong. Please call or text Ashley directly.'); }
     } catch { alert('Something went wrong. Please call or text Ashley directly.'); }
     btn.textContent = 'Send My Message →';
@@ -1311,6 +1323,7 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({ email: input.value, _subject: 'Newsletter Signup — AshleyAranaHomes.com', _cc: '9098378058@tmomail.net' })
       });
+      sendSMS('New newsletter signup on AshleyAranaHomes.com!');
     } catch {}
     input.value = '';
     btn.textContent = '✓ Subscribed!';
