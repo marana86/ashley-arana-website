@@ -766,7 +766,7 @@
           <img src="ashley-clean.jpg" alt="Ashley Arana" />
         </div>
         <div class="hero-agent-name">Ashley Arana</div>
-        <div class="hero-agent-sub">REALTOR® &bull; DRE #02062802</div>
+        <div class="hero-agent-sub">REALTOR® &bull; DRE #02007681</div>
       </div>
       <div class="hero-eyebrow">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -807,7 +807,7 @@
       <div class="agent-strip">
         <div class="agent-strip-info">
           <div class="agent-name">Main Street Realtors &bull; Rancho Cucamonga</div>
-          <div class="agent-title">(909) 837-8058</div>
+          <div class="agent-title">(909) 837-8058 &bull; <a href="mailto:Ashley@ashleyaranahomes.com" style="color:var(--gold);text-decoration:none;">Ashley@ashleyaranahomes.com</a></div>
         </div>
         <div class="agent-strip-stats">
           <div class="agent-stat"><div class="num">200+</div><div class="lbl">Sold</div></div>
@@ -1185,7 +1185,7 @@
 <footer>
   <p>
     &copy; 2026 Ashley Arana &bull; Main Street Realtors &bull; Rancho Cucamonga, CA<br />
-    CA DRE License #00000000 &bull; <a href="index.html">Main Website</a> &bull; <a href="tel:+19098378058">(909) 837-8058</a>
+    CA DRE #02007681 &bull; <a href="mailto:Ashley@ashleyaranahomes.com">Ashley@ashleyaranahomes.com</a> &bull; <a href="tel:+19098378058">(909) 837-8058</a> &bull; <a href="index.html">Main Website</a>
   </p>
 </footer>
 
@@ -1217,13 +1217,37 @@
     document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function submitForm() {
+  async function submitForm() {
     const first = document.getElementById('f-first').value.trim();
     const email = document.getElementById('f-email').value.trim();
     if (!first || !email) {
       alert('Please enter your name and email to continue.');
       return;
     }
+    const getRadio = name => { const el = document.querySelector(`input[name="${name}"]:checked`); return el ? el.value : ''; };
+    const data = {
+      _subject: 'New Home Value Request — AshleyAranaHomes.com',
+      'First Name': first,
+      'Last Name': document.getElementById('f-last').value.trim(),
+      'Email': email,
+      'Phone': document.getElementById('f-phone').value.trim(),
+      'Address': document.getElementById('f-address').value.trim(),
+      'City': document.getElementById('f-city').value.trim(),
+      'Zip': document.getElementById('f-zip').value.trim(),
+      'Property Type': getRadio('type'),
+      'Bedrooms': getRadio('beds'),
+      'Bathrooms': getRadio('baths'),
+      'Sq Ft': document.getElementById('f-sqft').value.trim(),
+      'Year Built': document.getElementById('f-year').value.trim(),
+      'Timeline': getRadio('timeline')
+    };
+    try {
+      await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch {}
     document.getElementById('formBody').style.display = 'none';
     document.querySelector('.form-progress').style.display = 'none';
     document.getElementById('successPanel').style.display = 'block';
