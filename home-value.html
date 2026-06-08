@@ -7,31 +7,31 @@
   <meta name="description" content="Find out exactly what your Southern California home is worth in today's market. Free, no-obligation home valuation from Ashley Arana, Main Street Realtors." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #0d1f35;
-      --navy-mid: #16344f;
-      --gold: #b8872a;
-      --gold-light: #d4a541;
+      --navy: #0d0d0d;
+      --navy-mid: #1a1a1a;
+      --gold: #c9a84c;
+      --gold-light: #e0c068;
       --white: #ffffff;
-      --off-white: #f9f7f4;
-      --border: #e2dfd9;
-      --gray: #9a9a9a;
-      --dark-gray: #444;
+      --off-white: #111111;
+      --border: rgba(201,168,76,0.25);
+      --gray: #888888;
+      --dark-gray: #c0c0c0;
       --green: #27ae60;
       --radius: 4px;
-      --shadow: 0 8px 30px rgba(0,0,0,0.1);
-      --shadow-lg: 0 20px 60px rgba(0,0,0,0.18);
+      --shadow: 0 8px 30px rgba(0,0,0,0.5);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.6);
     }
 
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--navy);
-      background: var(--white);
+      color: #e8e8e8;
+      background: #0d0d0d;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -237,10 +237,11 @@
 
     /* ── MULTI-STEP FORM CARD ── */
     .form-card {
-      background: var(--white);
+      background: #1a1a1a;
       border-radius: 14px;
       box-shadow: var(--shadow-lg);
       overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.2);
     }
     .form-card-header {
       background: var(--navy);
@@ -261,7 +262,7 @@
     /* Progress bar */
     .form-progress {
       padding: 1rem 2rem 0;
-      background: var(--off-white);
+      background: #111;
     }
     .progress-steps {
       display: flex;
@@ -295,7 +296,7 @@
       letter-spacing: 0.5px;
       transition: color 0.3s;
     }
-    .step-label.active { color: var(--navy); }
+    .step-label.active { color: var(--gold); }
     .step-line {
       flex: 1;
       height: 2px;
@@ -308,7 +309,7 @@
     /* Form Body */
     .form-body {
       padding: 1.75rem 2rem 2rem;
-      background: var(--off-white);
+      background: #111;
     }
 
     /* Step panels */
@@ -318,7 +319,7 @@
     .step-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
-      color: var(--navy);
+      color: var(--white);
       margin-bottom: 0.3rem;
     }
     .step-sub {
@@ -348,8 +349,8 @@
       border-radius: var(--radius);
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
-      color: var(--navy);
-      background: var(--white);
+      color: #e8e8e8;
+      background: #1a1a1a;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
@@ -382,14 +383,14 @@
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--dark-gray);
-      background: var(--white);
+      background: #1a1a1a;
       transition: all 0.2s;
       user-select: none;
     }
     .pill-label input:checked + span {
       border-color: var(--gold);
-      background: rgba(184,135,42,0.08);
-      color: var(--navy);
+      background: rgba(201,168,76,0.15);
+      color: var(--gold-light);
     }
     .pill-label span:hover { border-color: var(--gold); }
 
@@ -448,7 +449,7 @@
       display: none;
       text-align: center;
       padding: 2.5rem 2rem;
-      background: var(--off-white);
+      background: #111111;
     }
     .success-icon {
       width: 72px; height: 72px;
@@ -460,7 +461,7 @@
     .success-panel h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
-      color: var(--navy);
+      color: var(--white);
       margin-bottom: 0.5rem;
     }
     .success-panel p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; }
@@ -503,10 +504,10 @@
     }
 
     /* ── HOW IT WORKS ── */
-    .how { padding: 5rem 5%; background: var(--white); }
+    .how { padding: 5rem 5%; background: #0d0d0d; }
     .how-inner { max-width: 1000px; margin: 0 auto; }
     .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--navy); margin-bottom: 1rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--white); margin-bottom: 1rem; }
     .section-sub { font-size: 0.96rem; color: var(--gray); line-height: 1.75; max-width: 560px; }
     .text-center { text-align: center; }
     .text-center .section-sub { margin: 0 auto; }
@@ -542,11 +543,11 @@
       position: relative;
       z-index: 1;
     }
-    .how-step h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .how-step h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
     .how-step p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
 
     /* ── WHAT YOU GET ── */
-    .what-you-get { padding: 5rem 5%; background: var(--off-white); }
+    .what-you-get { padding: 5rem 5%; background: #111111; }
     .wyg-inner { max-width: 1100px; margin: 0 auto; }
     .wyg-grid {
       display: grid;
@@ -568,7 +569,7 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .wyg-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.2rem; }
+    .wyg-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
     .wyg-item p { font-size: 0.82rem; color: var(--gray); line-height: 1.55; }
     .wyg-photo {
       border-radius: 10px;
@@ -608,7 +609,7 @@
     }
 
     /* ── REVIEWS ── */
-    .reviews-section { padding: 5rem 5%; background: var(--white); }
+    .reviews-section { padding: 5rem 5%; background: #0d0d0d; }
     .reviews-inner { max-width: 1100px; margin: 0 auto; }
     .reviews-grid {
       display: grid;
@@ -618,7 +619,7 @@
     }
     .review-card {
       padding: 1.75rem;
-      background: var(--off-white);
+      background: #111111;
       border: 1px solid var(--border);
       border-radius: 10px;
     }
@@ -632,7 +633,7 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .review-name { font-size: 0.83rem; font-weight: 700; color: var(--navy); }
+    .review-name { font-size: 0.83rem; font-weight: 700; color: var(--white); }
     .review-location { font-size: 0.7rem; color: var(--gray); }
 
     /* ── BOTTOM CTA ── */
