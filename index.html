@@ -1306,7 +1306,7 @@
         s.style.display = 'block';
         form.querySelectorAll('input,select,textarea').forEach(el => el.value = '');
         setTimeout(() => s.style.display = 'none', 6000);
-        sendSMS('New inquiry on AshleyAranaHomes.com! Check your email for details.');
+        sendSMS('New inquiry on your website! Check your email for details.');
       } else { alert('Something went wrong. Please call or text Ashley directly.'); }
     } catch { alert('Something went wrong. Please call or text Ashley directly.'); }
     btn.textContent = 'Send My Message →';
@@ -1323,7 +1323,7 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({ email: input.value, _subject: 'Newsletter Signup — AshleyAranaHomes.com', _cc: '9098378058@tmomail.net' })
       });
-      sendSMS('New newsletter signup on AshleyAranaHomes.com!');
+      sendSMS('New newsletter signup on your website!');
     } catch {}
     input.value = '';
     btn.textContent = '✓ Subscribed!';
