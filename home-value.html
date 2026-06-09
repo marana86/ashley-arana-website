@@ -1252,10 +1252,7 @@
       });
       sendSMS('New home value request from your website! Check your email for details.');
     } catch {}
-    document.getElementById('formBody').style.display = 'none';
-    document.querySelector('.form-progress').style.display = 'none';
-    document.getElementById('successPanel').style.display = 'block';
-    document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.location.href = 'https://ashleyaranahomes.com/thank-you.html';
   }
 
   // Smooth scroll for anchor links
