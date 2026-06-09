@@ -822,8 +822,8 @@
         <div class="search-box">
           <h4>Search Available Homes</h4>
           <div class="search-input-row">
-            <input type="text" placeholder="City, zip code, or neighborhood…" />
-            <button type="button">Search</button>
+            <input type="text" id="homeSearch" placeholder="City, zip code, or neighborhood…" />
+            <button type="button" onclick="searchHomes()">Search</button>
           </div>
         </div>
         <div class="cta-row" style="margin-top:1.25rem;">
@@ -1244,6 +1244,19 @@
   }
   function goToSlide(i) { currentSlide = i; updateSlider(); }
   window.addEventListener('resize', updateSlider);
+
+  function searchHomes() {
+    const query = document.getElementById('homeSearch').value.trim();
+    const base = 'https://www.zillow.com/profile/Ashley%20Pocino';
+    if (query) {
+      window.open('https://www.zillow.com/homes/' + encodeURIComponent(query) + '_rb/', '_blank');
+    } else {
+      window.open(base, '_blank');
+    }
+  }
+  document.getElementById('homeSearch').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') searchHomes();
+  });
 
   const TB_KEY = '99caf21b01cabc5929005c4adfd89ef29066b922gsHIZb18YPuwuxaRvOEScMVAC';
   async function sendSMS(message) {
