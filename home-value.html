@@ -961,15 +961,6 @@
             <label>Phone Number</label>
             <input type="tel" id="f-phone" placeholder="(909) 555-0000" />
           </div>
-          <div class="form-field">
-            <label>When Are You Thinking of Selling?</label>
-            <div class="pill-group">
-              <label class="pill-label"><input type="radio" name="timeline" value="ASAP" /><span>ASAP</span></label>
-              <label class="pill-label"><input type="radio" name="timeline" value="1-3 Months" checked /><span>1–3 Months</span></label>
-              <label class="pill-label"><input type="radio" name="timeline" value="3-6 Months" /><span>3–6 Months</span></label>
-              <label class="pill-label"><input type="radio" name="timeline" value="Just Curious" /><span>Just Curious</span></label>
-            </div>
-          </div>
           <button class="btn-next gold" onclick="submitForm()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             Send Me My Free Home Value
@@ -1252,7 +1243,6 @@
       'Bathrooms': getRadio('baths'),
       'Sq Ft': document.getElementById('f-sqft').value.trim(),
       'Year Built': document.getElementById('f-year').value.trim(),
-      'Timeline': getRadio('timeline')
     };
     try {
       await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
