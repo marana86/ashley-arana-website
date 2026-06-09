@@ -1093,7 +1093,7 @@
     <div class="text-center">
       <p class="section-label">Get In Touch</p>
       <h2 class="section-title">Send Ashley a Message</h2>
-      <p class="section-sub" style="margin:0 auto 2.5rem;">Fill out the form and Ashley will get back to you within 24 hours.</p>
+      <p class="section-sub" style="margin:0 auto 2.5rem;">Fill out the form and Ashley will get back to you shortly.</p>
     </div>
     <form onsubmit="handleSubmit(event)">
       <div class="contact-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
@@ -1136,7 +1136,7 @@
         Send My Message &rarr;
       </button>
       <div class="success-flash" id="formSuccess">
-        ✓ Message sent! Ashley will be in touch with you within 24 hours.
+        ✓ Message sent! Ashley will be in touch with you soon.
       </div>
       <p style="text-align:center;font-size:0.75rem;color:var(--mid-gray);margin-top:0.75rem;">Your information is private and will never be shared or sold.</p>
     </form>
@@ -1279,7 +1279,6 @@
     const data = {};
     new FormData(form).forEach((v, k) => { data[k] = v; });
     data['_subject'] = 'New Inquiry from AshleyAranaHomes.com';
-    data['_cc'] = '9098378058@tmomail.net';
     try {
       const res = await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
         method: 'POST',
