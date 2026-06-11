@@ -321,7 +321,21 @@
     .text-center .section-sub { margin: 0 auto; }
 
     /* ── SELL SECTION ── */
-    .sell { background: #0d0d0d; }
+    .sell {
+      background: #0d0d0d;
+      position: relative;
+      overflow: hidden;
+    }
+    .sell::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('images/luxury-home.webp');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.12;
+      z-index: 0;
+    }
+    .sell .section-inner { position: relative; z-index: 1; }
     .sell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .sell-body { font-size: 0.96rem; color: var(--dark-gray); line-height: 1.8; margin-bottom: 1.5rem; }
     .sell-list { list-style: none; margin-bottom: 2rem; }
