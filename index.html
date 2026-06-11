@@ -1356,6 +1356,7 @@
         body: JSON.stringify(data)
       });
       if (res.ok) {
+        gtag('event', 'conversion', { 'send_to': 'AW-18224414202/8wgCP2XwLscEPr7ifJD' });
         const s = document.getElementById('formSuccess');
         s.style.display = 'block';
         form.querySelectorAll('input,select,textarea').forEach(el => el.value = '');
