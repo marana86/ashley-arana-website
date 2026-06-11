@@ -884,6 +884,13 @@
           <li>Skilled negotiation in competitive multiple-offer situations</li>
           <li>Full support from offer through inspection to close</li>
         </ul>
+        <div class="search-box" style="margin-top:1.5rem;">
+          <h4 style="font-size:0.85rem; font-weight:700; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:0.75rem;">Search Available Homes</h4>
+          <div class="search-input-row">
+            <input type="text" id="homeSearch" placeholder="City, zip code, or neighborhood…" />
+            <button type="button" onclick="searchHomes()">Search</button>
+          </div>
+        </div>
         <div class="cta-row" style="margin-top:1.25rem;">
           <a href="https://ashleypocino.mainstreetgroup.com/" target="_blank" class="btn-gold-solid">Talk to Ashley About Buying</a>
         </div>
@@ -1303,6 +1310,19 @@
   }
   function goToSlide(i) { currentSlide = i; updateSlider(); }
   window.addEventListener('resize', updateSlider);
+
+  function searchHomes() {
+    const query = document.getElementById('homeSearch').value.trim();
+    const base = 'https://ashleypocino.mainstreetgroup.com/';
+    if (query) {
+      window.open(base + '?search=' + encodeURIComponent(query), '_blank');
+    } else {
+      window.open(base, '_blank');
+    }
+  }
+  document.getElementById('homeSearch').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') searchHomes();
+  });
 
 
   const TB_KEY = '99caf21b01cabc5929005c4adfd89ef29066b922gsHIZb18YPuwuxaRvOEScMVAC';
