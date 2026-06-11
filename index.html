@@ -458,39 +458,41 @@
 
     /* ── ABOUT ── */
     .about { background: #0d0d0d; }
-    .about-grid { display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center; }
+    .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 5rem; align-items: center; }
     .about-body { font-size: 0.96rem; color: var(--dark-gray); line-height: 1.8; margin-bottom: 1.25rem; }
-    .credentials { margin: 1.75rem 0; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 1.75rem 0; }
+    .about-stat { background: #111; padding: 1.25rem 1rem; text-align: center; }
+    .about-stat .stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem; }
+    .about-stat .stat-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .credentials { margin: 1.5rem 0; }
     .credentials h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.75rem; }
-    .cred-list { list-style: none; }
+    .cred-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
     .cred-list li {
       display: flex; align-items: center; gap: 0.6rem;
-      font-size: 0.85rem; color: var(--dark-gray);
-      padding: 0.4rem 0; border-bottom: 1px solid rgba(201,168,76,0.15);
+      font-size: 0.83rem; color: var(--dark-gray);
+      padding: 0.4rem 0; border-bottom: 1px solid rgba(201,168,76,0.1);
     }
     .cred-list li:last-child { border-bottom: none; }
     .cred-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
     .about-photo-wrap { position: relative; }
     .about-photo-frame {
-      border-radius: 6px; overflow: hidden;
-      aspect-ratio: 4/5; background: var(--light-gray);
-      box-shadow: var(--shadow);
+      border-radius: 8px; overflow: hidden;
+      aspect-ratio: 3/4; background: var(--light-gray);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 3px solid rgba(201,168,76,0.3);
     }
     .about-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .about-accent {
-      position: absolute; bottom: -12px; left: -12px;
-      width: 100px; height: 100px;
-      border: 3px solid var(--navy); border-radius: 6px; z-index: -1;
-    }
+    .about-accent { display: none; }
     .brokerage-badge {
-      position: absolute; top: 1.5rem; right: -1.5rem;
-      background: var(--navy); color: var(--white);
-      padding: 0.75rem 1.25rem; border-radius: 6px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      text-align: center;
+      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      background: rgba(13,13,13,0.92); color: var(--white);
+      padding: 0.75rem 1.5rem; border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      text-align: center; border: 1px solid var(--border);
+      white-space: nowrap;
     }
-    .brokerage-badge .badge-name { font-size: 0.8rem; font-weight: 700; color: var(--gold-light); }
-    .brokerage-badge .badge-city { font-size: 0.65rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+    .brokerage-badge .badge-name { font-size: 0.85rem; font-weight: 700; color: var(--gold-light); }
+    .brokerage-badge .badge-city { font-size: 0.65rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
     .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
 
     /* ── REVIEWS ── */
@@ -655,7 +657,8 @@
       .buy-photo { max-width: 340px; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo-wrap { max-width: 340px; }
-      .brokerage-badge { right: -0.5rem; }
+      .brokerage-badge { right: auto; left: 50%; transform: translateX(-50%); }
+      .cred-list { grid-template-columns: 1fr; }
       .communities-grid { grid-template-columns: repeat(2, 1fr); }
       .cta-band-options { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -900,15 +903,43 @@
 <section class="about" id="about">
   <div class="section-inner">
     <div class="about-grid">
+
+      <div class="about-photo-wrap">
+        <div class="about-photo-frame">
+          <img src="ashley-clean.jpg" alt="Ashley Arana – Realtor, Main Street Realtors" />
+        </div>
+        <div class="about-accent"></div>
+        <div class="brokerage-badge">
+          <div class="badge-name">Main Street Realtors</div>
+          <div class="badge-city">Rancho Cucamonga, CA</div>
+        </div>
+      </div>
+
       <div>
         <p class="section-label">About Ashley</p>
         <h2 class="section-title">Your Advocate in Every<br />Real Estate Transaction</h2>
         <p class="about-body">
-          Hi, I'm Ashley Arana with Mainstreet Realtors. I am dedicated to helping clients navigate every stage of their real estate journey with confidence and peace of mind. Whether you're purchasing your first home, selling a longtime investment, or simply seeking a trusted real estate resource, I am committed to providing exceptional service and guidance every step of the way.
+          Hi, I'm Ashley Arana with Main Street Realtors. I help clients across Rancho Cucamonga, Alta Loma, and the Inland Empire navigate every stage of their real estate journey with confidence. Whether you're selling your family home, buying your first property, or exploring your options — I'm here to guide you every step of the way.
         </p>
         <p class="about-body">
-          I believe successful real estate transactions are built on strong relationships, open communication, and trust. My priority is to understand your unique goals, educate you on the process, and keep you informed from start to finish. By listening carefully to your needs and proactively managing every detail, I strive to make the buying or selling experience as smooth, stress-free, and rewarding as possible.
+          I believe exceptional service is built on trust, clear communication, and a genuine commitment to your goals. I take the time to understand what matters most to you, keep you informed from day one, and work hard to make the process as smooth and stress-free as possible.
         </p>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="stat-num">8+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">200+</div>
+            <div class="stat-label">Homes Sold</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-num">5★</div>
+            <div class="stat-label">Google Reviews</div>
+          </div>
+        </div>
+
         <div class="credentials">
           <h4>Certifications &amp; Recognition</h4>
           <ul class="cred-list">
@@ -917,7 +948,7 @@
             <li><span class="cred-dot"></span>Certified Real Estate Negotiator</li>
             <li><span class="cred-dot"></span>First-Time Homebuyer Specialist</li>
             <li><span class="cred-dot"></span>Top Producer – Main Street Realtors</li>
-            <li><span class="cred-dot"></span>5-Star Rated on Zillow &amp; Google</li>
+            <li><span class="cred-dot"></span>5-Star Rated on Google</li>
           </ul>
         </div>
         <div class="cta-row">
@@ -926,16 +957,6 @@
         </div>
       </div>
 
-      <div class="about-photo-wrap">
-        <div class="about-photo-frame">
-          <img src="images/alta-loma-aerial.jpg" alt="Aerial view of Alta Loma, Rancho Cucamonga" />
-        </div>
-        <div class="about-accent"></div>
-        <div class="brokerage-badge">
-          <div class="badge-name">Main Street Realtors</div>
-          <div class="badge-city">Rancho Cucamonga, CA</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
