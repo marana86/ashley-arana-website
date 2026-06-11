@@ -41,7 +41,6 @@
     "sameAs": [
       "https://www.facebook.com/AshleyPocinoRealEstate",
       "https://www.instagram.com/ashley_arana_re",
-      "https://www.zillow.com/profile/Ashley%20Pocino"
     ]
   }
   </script>
@@ -872,13 +871,6 @@
           <li>Skilled negotiation in competitive multiple-offer situations</li>
           <li>Full support from offer through inspection to close</li>
         </ul>
-        <div class="search-box">
-          <h4>Search Available Homes</h4>
-          <div class="search-input-row">
-            <input type="text" id="homeSearch" placeholder="City, zip code, or neighborhood…" />
-            <button type="button" onclick="searchHomes()">Search</button>
-          </div>
-        </div>
         <div class="cta-row" style="margin-top:1.25rem;">
           <a href="#contact" class="btn-gold-solid">Talk to Ashley About Buying</a>
         </div>
@@ -1299,18 +1291,6 @@
   function goToSlide(i) { currentSlide = i; updateSlider(); }
   window.addEventListener('resize', updateSlider);
 
-  function searchHomes() {
-    const query = document.getElementById('homeSearch').value.trim();
-    const base = 'https://www.zillow.com/profile/Ashley%20Pocino';
-    if (query) {
-      window.open('https://www.zillow.com/homes/' + encodeURIComponent(query) + '_rb/', '_blank');
-    } else {
-      window.open(base, '_blank');
-    }
-  }
-  document.getElementById('homeSearch').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') searchHomes();
-  });
 
   const TB_KEY = '99caf21b01cabc5929005c4adfd89ef29066b922gsHIZb18YPuwuxaRvOEScMVAC';
   async function sendSMS(message) {
