@@ -1356,6 +1356,7 @@
     const data = {};
     new FormData(form).forEach((v, k) => { data[k] = v; });
     data['_subject'] = 'New Inquiry from AshleyAranaHomes.com';
+    data['_cc'] = 'marana6632@gmail.com';
     try {
       const res = await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
         method: 'POST',
