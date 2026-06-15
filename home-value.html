@@ -1297,7 +1297,7 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       });
-      sendSMS('New home value request from your website! Check your email for details.');
+      await sendSMS('New home value request from your website! Check your email for details.');
     } catch {}
     window.location.href = 'https://ashleyaranahomes.com/thank-you.html';
   }
