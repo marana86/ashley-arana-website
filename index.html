@@ -1368,7 +1368,7 @@
         s.style.display = 'block';
         form.querySelectorAll('input,select,textarea').forEach(el => el.value = '');
         setTimeout(() => s.style.display = 'none', 6000);
-        sendSMS('New inquiry on your website! Check your email for details.');
+        await sendSMS('New inquiry on your website! Check your email for details.');
       } else { alert('Something went wrong. Please call or text Ashley directly.'); }
     } catch { alert('Something went wrong. Please call or text Ashley directly.'); }
     btn.textContent = 'Send My Message →';
