@@ -43,19 +43,15 @@
     ]
   }
   </script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HG60QLM36"></script>
+  <!-- Google Analytics + Ads (consolidated, deferred) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-8HG60QLM36');
-  </script>
-  <!-- Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18224414202"></script>
-  <script>
     gtag('config', 'AW-18224414202');
   </script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-8HG60QLM36"></script>
   <!-- Preload hero image so LCP fires fast -->
   <link rel="preload" as="image" href="ashley-new.png" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1391,67 +1387,76 @@
     setTimeout(() => btn.textContent = 'Subscribe', 4000);
   }
 
-  // Glassmorphism nav on scroll
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      nav.style.background = 'rgba(13,13,13,0.95)';
-      nav.style.backdropFilter = 'blur(12px)';
-      nav.style.webkitBackdropFilter = 'blur(12px)';
-      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.35)';
-    } else {
-      nav.style.background = 'var(--navy)';
-      nav.style.backdropFilter = 'none';
-      nav.style.webkitBackdropFilter = 'none';
-      nav.style.boxShadow = 'none';
-    }
-  });
-
-  // Animate on scroll with staggered delays
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        observer.unobserve(e.target);
+  // Defer non-critical animations until browser is idle
+  const initAnimations = () => {
+    // Glassmorphism nav on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.style.background = 'rgba(13,13,13,0.95)';
+        nav.style.backdropFilter = 'blur(12px)';
+        nav.style.webkitBackdropFilter = 'blur(12px)';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.35)';
+      } else {
+        nav.style.background = 'var(--navy)';
+        nav.style.backdropFilter = 'none';
+        nav.style.webkitBackdropFilter = 'none';
+        nav.style.boxShadow = 'none';
       }
+    }, { passive: true });
+
+    // Animate on scroll with staggered delays
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.sale-card, .review-card, .community-card, .cta-option, .step').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = `opacity 0.5s ease ${(i % 4) * 0.1}s, transform 0.5s ease ${(i % 4) * 0.1}s`;
+      observer.observe(el);
     });
-  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.sale-card, .review-card, .community-card, .cta-option, .step').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = `opacity 0.5s ease ${(i % 4) * 0.1}s, transform 0.5s ease ${(i % 4) * 0.1}s`;
-    observer.observe(el);
-  });
-
-  // Animated stat counters
-  function animateCount(el) {
-    if (el.dataset.counted) return;
-    el.dataset.counted = '1';
-    const target = parseInt(el.dataset.target, 10);
-    const duration = 1600;
-    const start = performance.now();
-    function step(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target;
+    // Animated stat counters
+    function animateCount(el) {
+      if (el.dataset.counted) return;
+      el.dataset.counted = '1';
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1600;
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
     }
-    requestAnimationFrame(step);
+
+    const statObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.count').forEach(animateCount);
+          statObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.stats-bar-inner').forEach(el => statObserver.observe(el));
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initAnimations, { timeout: 2000 });
+  } else {
+    setTimeout(initAnimations, 200);
   }
-
-  const statObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.count').forEach(animateCount);
-        statObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  document.querySelectorAll('.stats-bar-inner').forEach(el => statObserver.observe(el));
 </script>
 </body>
 </html>
