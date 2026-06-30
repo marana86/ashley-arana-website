@@ -461,9 +461,9 @@
     .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 1.75rem 0; }
     .about-stat { background: #111; padding: 1.25rem 1rem; text-align: center; }
     .about-stat .stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem; }
-    .about-stat .stat-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .about-stat .stat-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
     .credentials { margin: 1.5rem 0; }
-    .credentials h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.75rem; }
+    .credentials h3 { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 0.75rem; }
     .cred-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
     .cred-list li {
       display: flex; align-items: center; gap: 0.6rem;
@@ -570,7 +570,7 @@
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 1rem 1rem 0.9rem;
     }
-    .community-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+    .community-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
     .community-card p { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
     .community-gold-bar {
       display: block; width: 24px; height: 2px;
@@ -628,23 +628,23 @@
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .footer-brand .name { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); font-weight: 700; margin-bottom: 0.2rem; }
     .footer-brand .brokerage { font-size: 0.65rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
-    .footer-brand p { font-size: 0.83rem; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 260px; }
+    .footer-brand p { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 260px; }
     .footer-social { display: flex; gap: 0.6rem; margin-top: 1.25rem; }
     .footer-social a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
     .footer-social a:hover { background: var(--gold); }
     .footer-col h4 { font-size: 0.7rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.25rem; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.55rem; }
-    .footer-col ul a { font-size: 0.83rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color var(--transition); }
+    .footer-col ul a { font-size: 0.83rem; color: rgba(255,255,255,0.65); text-decoration: none; transition: color var(--transition); }
     .footer-col ul a:hover { color: var(--gold-light); }
     .footer-contact-item { display: flex; gap: 0.6rem; margin-bottom: 0.7rem; align-items: flex-start; }
     .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; }
-    .footer-contact-item a, .footer-contact-item span { font-size: 0.83rem; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-contact-item a, .footer-contact-item span { font-size: 0.83rem; color: rgba(255,255,255,0.65); text-decoration: none; }
     .footer-contact-item a:hover { color: var(--gold-light); }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
-    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.45); }
     .footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
-    .license { font-size: 0.7rem; color: rgba(255,255,255,0.2); margin-top: 0.25rem; }
+    .license { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 0.25rem; }
 
     /* ── MOBILE ── */
     @media (max-width: 1024px) {
@@ -737,6 +737,7 @@
 </nav>
 
 <!-- ── HERO ── -->
+<main>
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-content">
@@ -882,7 +883,7 @@
           <li>Full support from offer through inspection to close</li>
         </ul>
         <div class="search-box" style="margin-top:1.5rem;">
-          <h4 style="font-size:0.85rem; font-weight:700; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:0.75rem;">Search Available Homes</h4>
+          <h3 style="font-size:0.85rem; font-weight:700; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:0.75rem;">Search Available Homes</h3>
           <div class="search-input-row">
             <input type="text" id="homeSearch" placeholder="City, zip code, or neighborhood…" />
             <button type="button" onclick="searchHomes()">Search</button>
@@ -920,7 +921,7 @@
         </p>
 
         <div class="credentials">
-          <h4>Certifications &amp; Recognition</h4>
+          <h3>Certifications &amp; Recognition</h3>
           <ul class="cred-list">
             <li><span class="cred-dot"></span>Licensed California Real Estate Agent</li>
             <li><span class="cred-dot"></span>Certified Luxury Home Marketing Specialist</li>
@@ -1050,7 +1051,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>Alta Loma</h4>
+          <h3>Alta Loma</h3>
           <p>Ashley's home market</p>
         </div>
       </a>
@@ -1059,7 +1060,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>Glendora</h4>
+          <h3>Glendora</h3>
           <p>Prestigious foothills living</p>
         </div>
       </a>
@@ -1068,7 +1069,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>Upland</h4>
+          <h3>Upland</h3>
           <p>Foothill communities</p>
         </div>
       </a>
@@ -1077,7 +1078,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>Rancho Cucamonga</h4>
+          <h3>Rancho Cucamonga</h3>
           <p>Vibrant Inland Empire gem</p>
         </div>
       </a>
@@ -1086,7 +1087,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>San Dimas</h4>
+          <h3>San Dimas</h3>
           <p>Charming foothill community</p>
         </div>
       </a>
@@ -1095,7 +1096,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>Chino Hills</h4>
+          <h3>Chino Hills</h3>
           <p>Scenic hillside living</p>
         </div>
       </a>
@@ -1104,7 +1105,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>Claremont</h4>
+          <h3>Claremont</h3>
           <p>College town charm</p>
         </div>
       </a>
@@ -1113,7 +1114,7 @@
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
-          <h4>La Verne</h4>
+          <h3>La Verne</h3>
           <p>Charming tree-lined streets</p>
         </div>
       </a>
@@ -1179,8 +1180,8 @@
         </div>
       </div>
       <div style="margin-bottom:1rem;">
-        <label style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">I'm Looking To…</label>
-        <select name="Inquiry Type" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;background:#1a1a1a;color:#e8e8e8;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
+        <label for="inquiryType" style="display:block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark-gray);margin-bottom:0.35rem;">I'm Looking To…</label>
+        <select id="inquiryType" name="Inquiry Type" required style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:Inter,sans-serif;font-size:0.9rem;outline:none;background:#1a1a1a;color:#e8e8e8;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--border)'">
           <option value="" disabled selected>Select one</option>
           <option>Buy a Home</option>
           <option>Sell My Home</option>
@@ -1205,6 +1206,8 @@
   </div>
 </section>
 
+
+</main>
 
 <!-- ── FOOTER ── -->
 <footer>
