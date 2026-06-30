@@ -56,9 +56,12 @@
   <script>
     gtag('config', 'AW-18224414202');
   </script>
+  <!-- Preload hero image so LCP fires fast -->
+  <link rel="preload" as="image" href="ashley-new.png" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" /></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -758,7 +761,7 @@
 
     <div class="hero-photo-wrap">
       <div class="hero-photo">
-        <img src="ashley-new.png" alt="Ashley Arana, Realtor – Main Street Realtors, Rancho Cucamonga" />
+        <img src="ashley-new.png" alt="Ashley Arana, Realtor – Main Street Realtors, Rancho Cucamonga" fetchpriority="high" loading="eager" width="380" height="480" />
       </div>
     </div>
   </div>
@@ -864,7 +867,7 @@
     <div class="buy-grid">
       <div class="buy-photo">
         <div class="buy-photo-frame">
-          <img src="images/buy-home.jpg" alt="Beautiful home available in Southern California" />
+          <img src="images/buy-home.jpg" alt="Beautiful home available in Southern California" loading="lazy" />
         </div>
         <div class="buy-accent"></div>
       </div>
@@ -901,7 +904,7 @@
 
       <div class="about-photo-wrap">
         <div class="about-photo-frame">
-          <img src="images/ashley-headshot.jpg" alt="Ashley Arana – Realtor, Main Street Realtors" />
+          <img src="images/ashley-headshot.jpg" alt="Ashley Arana – Realtor, Main Street Realtors" loading="lazy" />
         </div>
         <div class="about-accent"></div>
         <div class="brokerage-badge">
@@ -1047,7 +1050,7 @@
     </div>
     <div class="communities-grid">
       <a class="community-card" href="https://ashleypocino.mainstreetgroup.com/" target="_blank">
-        <img class="community-img" src="images/rancho.jpg" alt="Luxury home in Alta Loma" />
+        <img class="community-img" src="images/rancho.jpg" loading="lazy" alt="Luxury home in Alta Loma" />
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
@@ -1056,7 +1059,7 @@
         </div>
       </a>
       <a class="community-card" href="https://ashleypocino.mainstreetgroup.com/" target="_blank">
-        <img class="community-img" src="images/glendora.jpg" alt="Luxury home in Glendora" />
+        <img class="community-img" src="images/glendora.jpg" loading="lazy" alt="Luxury home in Glendora" />
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
@@ -1065,7 +1068,7 @@
         </div>
       </a>
       <a class="community-card" href="https://ashleypocino.mainstreetgroup.com/" target="_blank">
-        <img class="community-img" src="images/upland.jpg" alt="Luxury home in Upland" />
+        <img class="community-img" src="images/upland.jpg" loading="lazy" alt="Luxury home in Upland" />
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
@@ -1074,7 +1077,7 @@
         </div>
       </a>
       <a class="community-card" href="https://ashleypocino.mainstreetgroup.com/" target="_blank">
-        <img class="community-img" src="images/fontana.jpg" alt="Luxury home in Rancho Cucamonga" />
+        <img class="community-img" src="images/fontana.jpg" loading="lazy" alt="Luxury home in Rancho Cucamonga" />
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
@@ -1092,7 +1095,7 @@
         </div>
       </a>
       <a class="community-card" href="https://ashleypocino.mainstreetgroup.com/" target="_blank">
-        <img class="community-img" src="images/chinohills.jpg" alt="Luxury home in Chino Hills" />
+        <img class="community-img" src="images/chinohills.jpg" loading="lazy" alt="Luxury home in Chino Hills" />
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
@@ -1101,7 +1104,7 @@
         </div>
       </a>
       <a class="community-card" href="https://ashleypocino.mainstreetgroup.com/" target="_blank">
-        <img class="community-img" src="images/claremont.jpg" alt="Luxury home in Claremont" />
+        <img class="community-img" src="images/claremont.jpg" loading="lazy" alt="Luxury home in Claremont" />
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
@@ -1110,7 +1113,7 @@
         </div>
       </a>
       <a class="community-card" href="https://ashleypocino.mainstreetgroup.com/" target="_blank">
-        <img class="community-img" src="images/laverne.jpg" alt="Luxury home in La Verne" />
+        <img class="community-img" src="images/laverne.jpg" loading="lazy" alt="Luxury home in La Verne" />
         <div class="community-overlay"></div>
         <div class="community-text">
           <span class="community-gold-bar"></span>
