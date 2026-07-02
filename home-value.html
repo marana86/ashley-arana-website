@@ -149,7 +149,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('images/luxury-home.webp');
+      background-image: url('images/luxury-home-opt.webp');
       background-size: cover;
       background-position: center 30%;
       opacity: 0.35;
@@ -811,7 +811,10 @@
     <div class="hero-left">
       <div class="hero-agent-circle">
         <div class="hero-agent-img">
-          <img src="ashley-new.png" alt="Ashley Arana" />
+          <picture>
+            <source srcset="ashley-new.webp" type="image/webp" />
+            <img src="ashley-new.png" alt="Ashley Arana" fetchpriority="high" loading="eager" />
+          </picture>
         </div>
         <div class="hero-agent-name">Ashley Arana</div>
         <div class="hero-agent-sub">REALTOR® &bull; DRE #02007681</div>
@@ -1082,7 +1085,10 @@
         </div>
       </div>
       <div class="wyg-photo">
-        <img src="ashley-new.png" alt="Ashley Arana — Your Southern California Home Valuation Expert" />
+        <picture>
+          <source srcset="ashley-new.webp" type="image/webp" />
+          <img src="ashley-new.png" alt="Ashley Arana — Your Southern California Home Valuation Expert" loading="lazy" />
+        </picture>
         <div class="wyg-photo-badge">
           <div class="badge-name">Ashley Arana</div>
           <div class="badge-title">Main Street Realtors &bull; Rancho Cucamonga</div>
