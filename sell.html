@@ -165,6 +165,10 @@
             <input type="tel" id="sh-phone" placeholder="(909) 555-0100" />
           </div>
           <div class="form-group">
+            <label>Property Address</label>
+            <input type="text" id="sh-address" placeholder="123 Main St, Rancho Cucamonga" />
+          </div>
+          <div class="form-group">
             <label>When Are You Looking to Sell?</label>
             <select id="sh-timeline">
               <option value="" disabled selected>Select a timeline</option>
@@ -290,6 +294,10 @@
         <label>Phone Number</label>
         <input type="tel" name="Phone" placeholder="(909) 555-0100" required />
       </div>
+      <div class="form-group">
+        <label>Property Address</label>
+        <input type="text" name="Address" placeholder="123 Main St, Rancho Cucamonga" />
+      </div>
       <button type="submit" class="btn-submit">Call Me Back →</button>
     </form>
     <p class="form-note">Your information is private and will never be shared or sold.</p>
@@ -327,7 +335,7 @@
     const data = {
       _subject: 'New Seller Lead — AshleyAranaHomes.com/sell',
       _cc: 'marana6632@gmail.com',
-      'Name': name, 'Phone': phone, 'Timeline': timeline
+      'Name': name, 'Phone': phone, 'Address': document.getElementById('sh-address').value.trim(), 'Timeline': timeline
     };
     try {
       await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
