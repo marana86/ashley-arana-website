@@ -876,17 +876,12 @@
         <div class="progress-steps">
           <div class="progress-step">
             <div class="step-circle active" id="circle1">1</div>
-            <div class="step-label active" id="label1">Property</div>
+            <div class="step-label active" id="label1">Address</div>
           </div>
           <div class="step-line" id="line1"></div>
           <div class="progress-step">
             <div class="step-circle" id="circle2">2</div>
-            <div class="step-label" id="label2">Details</div>
-          </div>
-          <div class="step-line" id="line2"></div>
-          <div class="progress-step">
-            <div class="step-circle" id="circle3">3</div>
-            <div class="step-label" id="label3">Contact</div>
+            <div class="step-label" id="label2">Contact</div>
           </div>
         </div>
       </div>
@@ -921,7 +916,7 @@
             </div>
           </div>
           <button class="btn-next" onclick="goStep(2)">
-            Next — Home Details
+            Next — Your Contact Info
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
           <p class="form-privacy">
@@ -930,88 +925,27 @@
           </p>
         </div>
 
-        <!-- STEP 2: Home Details -->
+        <!-- STEP 2: Contact Info -->
         <div class="step-panel" id="step2">
-          <div class="step-title">Tell us about your home</div>
-          <div class="step-sub">Helps Ashley give you the most accurate valuation</div>
-          <div class="form-field">
-            <label>Bedrooms</label>
-            <div class="pill-group three">
-              <label class="pill-label"><input type="radio" name="beds" value="2" /><span>2</span></label>
-              <label class="pill-label"><input type="radio" name="beds" value="3" checked /><span>3</span></label>
-              <label class="pill-label"><input type="radio" name="beds" value="4" /><span>4</span></label>
-              <label class="pill-label"><input type="radio" name="beds" value="5" /><span>5</span></label>
-              <label class="pill-label"><input type="radio" name="beds" value="6+" /><span>6+</span></label>
-              <label class="pill-label"><input type="radio" name="beds" value="1" /><span>1</span></label>
-            </div>
-          </div>
-          <div class="form-field">
-            <label>Bathrooms</label>
-            <div class="pill-group three">
-              <label class="pill-label"><input type="radio" name="baths" value="1" /><span>1</span></label>
-              <label class="pill-label"><input type="radio" name="baths" value="1.5" /><span>1.5</span></label>
-              <label class="pill-label"><input type="radio" name="baths" value="2" checked /><span>2</span></label>
-              <label class="pill-label"><input type="radio" name="baths" value="2.5" /><span>2.5</span></label>
-              <label class="pill-label"><input type="radio" name="baths" value="3" /><span>3</span></label>
-              <label class="pill-label"><input type="radio" name="baths" value="3+" /><span>3+</span></label>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label>Approx. Sq Footage</label>
-              <input type="text" id="f-sqft" placeholder="e.g. 1,850" />
-            </div>
-            <div class="form-field">
-              <label>Year Built (approx)</label>
-              <input type="text" id="f-year" placeholder="e.g. 1995" maxlength="4" />
-            </div>
-          </div>
-          <div class="form-field">
-            <label>Overall Condition</label>
-            <div class="pill-group">
-              <label class="pill-label"><input type="radio" name="condition" value="Excellent" /><span>Excellent</span></label>
-              <label class="pill-label"><input type="radio" name="condition" value="Good" checked /><span>Good</span></label>
-              <label class="pill-label"><input type="radio" name="condition" value="Fair" /><span>Fair</span></label>
-              <label class="pill-label"><input type="radio" name="condition" value="Needs Work" /><span>Needs Work</span></label>
-            </div>
-          </div>
-          <button class="btn-next" onclick="goStep(3)">
-            Next — Your Contact Info
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          <button class="btn-back" onclick="goStep(1)">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Back
-          </button>
-        </div>
-
-        <!-- STEP 3: Contact Info -->
-        <div class="step-panel" id="step3">
           <div class="step-title">Almost done!</div>
-          <div class="step-sub">Where should Ashley send your valuation?</div>
-          <div class="form-row">
-            <div class="form-field">
-              <label>First Name</label>
-              <input type="text" id="f-first" placeholder="Jane" />
-            </div>
-            <div class="form-field">
-              <label>Last Name</label>
-              <input type="text" id="f-last" placeholder="Smith" />
-            </div>
-          </div>
+          <div class="step-sub">Where should Ashley reach you?</div>
           <div class="form-field">
-            <label>Email Address</label>
-            <input type="email" id="f-email" placeholder="jane@email.com" />
+            <label>Your Name</label>
+            <input type="text" id="f-name" placeholder="Jane Smith" />
           </div>
           <div class="form-field">
             <label>Phone Number</label>
             <input type="tel" id="f-phone" placeholder="(909) 555-0000" />
           </div>
+          <div class="form-field">
+            <label>Email Address</label>
+            <input type="email" id="f-email" placeholder="jane@email.com" />
+          </div>
           <button class="btn-next gold" onclick="submitForm()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             Send Me My Free Home Value
           </button>
-          <button class="btn-back" onclick="goStep(2)">
+          <button class="btn-back" onclick="goStep(1)">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
             Back
           </button>
@@ -1234,11 +1168,11 @@
     if (n > currentStep) {
       document.getElementById('circle' + currentStep).classList.add('done');
       document.getElementById('circle' + currentStep).innerHTML = '✓';
-      if (currentStep < 3) document.getElementById('line' + currentStep).classList.add('done');
+      if (currentStep < 2) document.getElementById('line' + currentStep).classList.add('done');
     } else {
       document.getElementById('circle' + currentStep).classList.remove('done');
       document.getElementById('circle' + currentStep).innerHTML = currentStep;
-      if (currentStep > 1) document.getElementById('line' + (currentStep-1)).classList.remove('done');
+      if (currentStep > 1) document.getElementById('line' + (currentStep - 1)).classList.remove('done');
     }
 
     currentStep = n;
@@ -1252,39 +1186,25 @@
   }
 
   const TB_KEY = '99caf21b01cabc5929005c4adfd89ef29066b922gsHIZb18YPuwuxaRvOEScMVAC';
-  async function sendSMS(message) {
-    try {
-      await fetch('https://textbelt.com/text', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phone: '9098378058', message, key: TB_KEY })
-      });
-    } catch {}
-  }
 
   async function submitForm() {
-    const first = document.getElementById('f-first').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    if (!first || !email) {
-      alert('Please enter your name and email to continue.');
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    if (!name || !phone) {
+      alert('Please enter your name and phone number to continue.');
       return;
     }
-    const getRadio = name => { const el = document.querySelector(`input[name="${name}"]:checked`); return el ? el.value : ''; };
+    const getRadio = r => { const el = document.querySelector(`input[name="${r}"]:checked`); return el ? el.value : ''; };
     const data = {
       _subject: 'New Home Value Request — AshleyAranaHomes.com',
       _cc: 'marana6632@gmail.com',
-      'First Name': first,
-      'Last Name': document.getElementById('f-last').value.trim(),
-      'Email': email,
-      'Phone': document.getElementById('f-phone').value.trim(),
+      'Name': name,
+      'Phone': phone,
+      'Email': document.getElementById('f-email').value.trim(),
       'Address': document.getElementById('f-address').value.trim(),
       'City': document.getElementById('f-city').value.trim(),
       'Zip': document.getElementById('f-zip').value.trim(),
       'Property Type': getRadio('type'),
-      'Bedrooms': getRadio('beds'),
-      'Bathrooms': getRadio('baths'),
-      'Sq Ft': document.getElementById('f-sqft').value.trim(),
-      'Year Built': document.getElementById('f-year').value.trim(),
     };
     try {
       await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
@@ -1292,7 +1212,13 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       });
-      await sendSMS('New home value request from your website! Check your email for details.');
+      try {
+        await fetch('https://textbelt.com/text', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone: '9098378058', message: 'New home value request! ' + name + ' — ' + phone + '. Check email.', key: TB_KEY })
+        });
+      } catch {}
     } catch {}
     window.location.href = 'https://ashleyaranahomes.com/thank-you.html';
   }

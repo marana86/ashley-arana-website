@@ -37,17 +37,23 @@
     .nav-links-inline a:hover { color: var(--gold-light); }
     .nav-call { background: var(--gold); color: var(--navy) !important; padding: 0.5rem 1rem !important; border-radius: var(--radius); font-weight: 700 !important; }
 
-    .hero { background: linear-gradient(to right, #0d0d0d 55%, #1a1a1a 100%); padding: 5rem 5% 4rem; }
-    .hero-inner { max-width: 1100px; margin: 0 auto; }
+    .hero { background: linear-gradient(to right, #0d0d0d 55%, #1a1a1a 100%); padding: 4rem 5%; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 3rem; align-items: center; }
     .hero-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
     .hero h1 span { color: var(--gold-light); }
-    .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 620px; line-height: 1.75; margin-bottom: 2rem; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero p { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 1.5rem; }
+    .hero-phone { display: inline-flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.55); font-size: 0.88rem; text-decoration: none; }
+    .hero-phone:hover { color: var(--gold-light); }
     .btn-gold { padding: 0.95rem 2.25rem; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 0.95rem; border-radius: var(--radius); text-decoration: none; transition: background var(--transition); display: inline-block; }
     .btn-gold:hover { background: var(--gold-light); }
     .btn-outline { padding: 0.95rem 2rem; background: transparent; color: var(--white); font-weight: 700; font-size: 0.92rem; border: 2px solid rgba(255,255,255,0.3); border-radius: var(--radius); text-decoration: none; transition: all var(--transition); display: inline-block; }
     .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+    .hero-form-card { background: #1a1a1a; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .hero-form-header { background: #111; padding: 1.25rem 1.5rem; border-bottom: 2px solid var(--gold); text-align: center; }
+    .hero-form-header h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--white); margin-bottom: 0.2rem; }
+    .hero-form-header p { font-size: 0.73rem; color: rgba(255,255,255,0.35); }
+    .hero-form-body { padding: 1.5rem; }
 
     .trust-bar { background: #111; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.25rem 5%; }
     .trust-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 2.5rem; flex-wrap: wrap; }
@@ -102,6 +108,7 @@
     .footer-bottom { max-width: 1100px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); }
     .footer-bottom p { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
 
+    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       .steps-grid { grid-template-columns: 1fr 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
@@ -132,12 +139,46 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Rancho Cucamonga &bull; Alta Loma &bull; Inland Empire</div>
-    <h1>Find Your Dream Home<br /><span>in Rancho Cucamonga</span></h1>
-    <p>Ashley Arana is your local buyer's agent — with deep market knowledge, strong negotiation skills, and a network that gets you access to homes before they hit the market.</p>
-    <div class="hero-btns">
-      <a href="#buy-form" class="btn-gold">Start Your Home Search →</a>
-      <a href="tel:9098378058" class="btn-outline">Call (909) 837-8058</a>
+    <div class="hero-left">
+      <div class="hero-eyebrow">Rancho Cucamonga &bull; Alta Loma &bull; Inland Empire</div>
+      <h1>Find Your Dream Home<br /><span>in Rancho Cucamonga</span></h1>
+      <p>Ashley Arana is your local buyer's agent — deep market knowledge, strong negotiation skills, and access to homes before they hit Zillow. Tell us what you're looking for.</p>
+      <a href="tel:9098378058" class="hero-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.05 6.05l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Prefer to call? (909) 837-8058
+      </a>
+    </div>
+    <div class="hero-form-card" id="buy-form">
+      <div class="hero-form-header">
+        <h3>Start Your Home Search</h3>
+        <p>Free consultation &bull; No obligation &bull; Same-day response</p>
+      </div>
+      <div class="hero-form-body">
+        <div id="buyHeroSuccess" style="display:none;text-align:center;padding:1.25rem;color:#27ae60;font-weight:600;border:1px solid #27ae60;border-radius:3px;background:rgba(39,174,96,0.08);margin-bottom:1rem;">✓ Sent! Ashley will reach out shortly.</div>
+        <div id="buyHeroFields">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="bh-name" placeholder="Jane Smith" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="bh-phone" placeholder="(909) 555-0100" />
+          </div>
+          <div class="form-group">
+            <label>What's Your Budget Range?</label>
+            <select id="bh-budget">
+              <option value="" disabled selected>Select a budget range</option>
+              <option>Under $500,000</option>
+              <option>$500,000 – $700,000</option>
+              <option>$700,000 – $900,000</option>
+              <option>$900,000 – $1,200,000</option>
+              <option>$1,200,000+</option>
+            </select>
+          </div>
+          <button onclick="submitBuyHero()" class="btn-submit">Let's Find Your Home →</button>
+          <p class="form-note">100% private. Your info is never shared.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -236,58 +277,21 @@
 </section>
 
 <!-- CTA FORM -->
-<div class="cta-section" id="buy-form">
-  <h2>Ready to Start Your Home Search?</h2>
-  <p>Tell Ashley what you're looking for and she'll reach out to discuss your search, your timeline, and how to get you into the right home.</p>
+<div class="cta-section" id="buy-contact">
+  <h2>Have Questions First?</h2>
+  <p>Leave your name and number and Ashley will call you back — no pressure, no obligation.</p>
   <div class="contact-form">
-    <div id="buySuccess" class="form-success">✓ Message sent! Ashley will be in touch very soon.</div>
+    <div id="buySuccess" class="form-success">✓ Got it! Ashley will call you soon.</div>
     <form id="buyForm">
-      <div class="form-row">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" name="First Name" placeholder="Jane" required />
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" name="Last Name" placeholder="Smith" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" name="Phone" placeholder="(909) 555-0100" required />
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" name="Email" placeholder="jane@email.com" required />
-        </div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" name="Name" placeholder="Jane Smith" required />
       </div>
       <div class="form-group">
-        <label>What Area Are You Looking In?</label>
-        <input type="text" name="Area" placeholder="Rancho Cucamonga, Alta Loma, Upland..." />
+        <label>Phone Number</label>
+        <input type="tel" name="Phone" placeholder="(909) 555-0100" required />
       </div>
-      <div class="form-group">
-        <label>What Is Your Budget Range?</label>
-        <select name="Budget">
-          <option value="" disabled selected>Select a budget range</option>
-          <option>Under $500,000</option>
-          <option>$500,000 – $700,000</option>
-          <option>$700,000 – $900,000</option>
-          <option>$900,000 – $1,200,000</option>
-          <option>$1,200,000+</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>When Are You Looking to Buy?</label>
-        <select name="Timeline">
-          <option value="" disabled selected>Select a timeline</option>
-          <option>As soon as possible</option>
-          <option>Within 1–3 months</option>
-          <option>Within 3–6 months</option>
-          <option>6+ months out — just exploring</option>
-        </select>
-      </div>
-      <button type="submit" class="btn-submit">Start My Home Search — Free Consultation →</button>
+      <button type="submit" class="btn-submit">Call Me Back →</button>
     </form>
     <p class="form-note">Your information is private and will never be shared or sold.</p>
   </div>
@@ -316,15 +320,16 @@
 <script>
   const TB_KEY = '99caf21b01cabc5929005c4adfd89ef29066b922gsHIZb18YPuwuxaRvOEScMVAC';
 
-  document.getElementById('buyForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    const data = {};
-    new FormData(this).forEach((v, k) => data[k] = v);
-    data['_subject'] = 'New Buyer Inquiry — AshleyAranaHomes.com/buy';
-    data['_cc'] = 'marana6632@gmail.com';
+  async function submitBuyHero() {
+    const name = document.getElementById('bh-name').value.trim();
+    const phone = document.getElementById('bh-phone').value.trim();
+    if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+    const budget = document.getElementById('bh-budget').value || 'Not specified';
+    const data = {
+      _subject: 'New Buyer Lead — AshleyAranaHomes.com/buy',
+      _cc: 'marana6632@gmail.com',
+      'Name': name, 'Phone': phone, 'Budget': budget
+    };
     try {
       await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
         method: 'POST',
@@ -336,13 +341,42 @@
         await fetch('https://textbelt.com/text', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ phone: '9098378058', message: 'New buyer inquiry from your website! ' + (data['First Name'] || '') + ' ' + (data['Last Name'] || '') + ' — ' + (data['Phone'] || '') + '. Check email.', key: TB_KEY })
+          body: JSON.stringify({ phone: '9098378058', message: 'New buyer lead! ' + name + ' — ' + phone + ' — Budget: ' + budget, key: TB_KEY })
+        });
+      } catch {}
+      document.getElementById('buyHeroFields').style.display = 'none';
+      document.getElementById('buyHeroSuccess').style.display = 'block';
+    } catch {
+      alert('Something went wrong. Please call Ashley directly at (909) 837-8058.');
+    }
+  }
+
+  document.getElementById('buyForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    const data = {};
+    new FormData(this).forEach((v, k) => data[k] = v);
+    data['_subject'] = 'Callback Request — AshleyAranaHomes.com/buy';
+    data['_cc'] = 'marana6632@gmail.com';
+    try {
+      await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      try {
+        await fetch('https://textbelt.com/text', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone: '9098378058', message: 'Callback request from buy page: ' + (data['Name'] || '') + ' — ' + (data['Phone'] || ''), key: TB_KEY })
         });
       } catch {}
       document.getElementById('buySuccess').style.display = 'block';
       this.style.display = 'none';
     } catch {
-      btn.textContent = 'Start My Home Search — Free Consultation →';
+      btn.textContent = 'Call Me Back →';
       btn.disabled = false;
       alert('Something went wrong. Please call Ashley directly at (909) 837-8058.');
     }
