@@ -380,6 +380,7 @@
           body: JSON.stringify({ phone: '9098378058', message: 'Callback request from sell page: ' + (data['Name'] || '') + ' — ' + (data['Phone'] || ''), key: TB_KEY })
         });
       } catch {}
+      gtag('event', 'conversion', { 'send_to': 'AW-18224414202/8wgCP2XwLscEPr7ifJD' });
       document.getElementById('sellSuccess').style.display = 'block';
       this.style.display = 'none';
     } catch {

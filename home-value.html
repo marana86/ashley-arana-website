@@ -1212,6 +1212,7 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       });
+      gtag('event', 'conversion', { 'send_to': 'AW-18224414202/8wgCP2XwLscEPr7ifJD' });
       try {
         await fetch('https://textbelt.com/text', {
           method: 'POST',

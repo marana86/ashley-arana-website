@@ -165,10 +165,6 @@
             <input type="tel" id="bh-phone" placeholder="(909) 555-0100" />
           </div>
           <div class="form-group">
-            <label>Your Current Address</label>
-            <input type="text" id="bh-address" placeholder="123 Main St, Rancho Cucamonga" />
-          </div>
-          <div class="form-group">
             <label>What's Your Budget Range?</label>
             <select id="bh-budget">
               <option value="" disabled selected>Select a budget range</option>
@@ -295,10 +291,6 @@
         <label>Phone Number</label>
         <input type="tel" name="Phone" placeholder="(909) 555-0100" required />
       </div>
-      <div class="form-group">
-        <label>Your Current Address</label>
-        <input type="text" name="Address" placeholder="123 Main St, Rancho Cucamonga" />
-      </div>
       <button type="submit" class="btn-submit">Call Me Back →</button>
     </form>
     <p class="form-note">Your information is private and will never be shared or sold.</p>
@@ -336,7 +328,7 @@
     const data = {
       _subject: 'New Buyer Lead — AshleyAranaHomes.com/buy',
       _cc: 'marana6632@gmail.com',
-      'Name': name, 'Phone': phone, 'Address': document.getElementById('bh-address').value.trim(), 'Budget': budget
+      'Name': name, 'Phone': phone, 'Budget': budget
     };
     try {
       await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
@@ -381,6 +373,7 @@
           body: JSON.stringify({ phone: '9098378058', message: 'Callback request from buy page: ' + (data['Name'] || '') + ' — ' + (data['Phone'] || ''), key: TB_KEY })
         });
       } catch {}
+      gtag('event', 'conversion', { 'send_to': 'AW-18224414202/8wgCP2XwLscEPr7ifJD' });
       document.getElementById('buySuccess').style.display = 'block';
       this.style.display = 'none';
     } catch {
