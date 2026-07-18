@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you.html
+Disallow: /privacy-policy.html
+Disallow: /terms-of-service.html
+Disallow: /disclaimer.html
 
 Sitemap: https://ashleyaranahomes.com/sitemap.xml
