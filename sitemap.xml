@@ -102,4 +102,28 @@
     <changefreq>monthly</changefreq>
     <lastmod>2026-07-22</lastmod>
   </url>
+  <url>
+    <loc>https://ashleyaranahomes.com/blog-living-in-la-verne.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://ashleyaranahomes.com/blog-living-in-claremont.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://ashleyaranahomes.com/blog-living-in-upland.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://ashleyaranahomes.com/blog-living-in-glendora.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-24</lastmod>
+  </url>
 </urlset>
