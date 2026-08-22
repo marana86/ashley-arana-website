@@ -39,6 +39,14 @@
 
     .hero { background: linear-gradient(to right, #0d0d0d 55%, #1a1a1a 100%); padding: 4rem 5%; }
     .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 3rem; align-items: center; }
+    .hero-agent { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.5rem; }
+    .hero-agent img {
+      width: 68px; height: 68px; border-radius: 50%; object-fit: cover; object-position: center 15%;
+      border: 2.5px solid var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.15), 0 4px 14px rgba(0,0,0,0.4);
+      flex-shrink: 0; display: block;
+    }
+    .hero-agent-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--white); line-height: 1.2; }
+    .hero-agent-title { font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.5px; margin-top: 0.15rem; }
     .hero-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; }
     .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
     .hero h1 span { color: var(--gold-light); }
@@ -140,6 +148,13 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-left">
+      <div class="hero-agent">
+        <img src="images/ashley-headshot.jpg" alt="Ashley Arana, Realtor" width="68" height="68" />
+        <div>
+          <div class="hero-agent-name">Ashley Arana</div>
+          <div class="hero-agent-title">Buyer's Agent &bull; Main Street Realtors</div>
+        </div>
+      </div>
       <div class="hero-eyebrow">Southern California &bull; Inland Empire</div>
       <h1>Find Your Dream Home<br /><span>in Southern California</span></h1>
       <p>Ashley Arana is your local buyer's agent — deep market knowledge, strong negotiation skills, and access to homes before they hit Zillow. Tell us what you're looking for.</p>
