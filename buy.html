@@ -180,14 +180,28 @@
             <input type="tel" id="bh-phone" placeholder="(909) 555-0100" />
           </div>
           <div class="form-group">
+            <label>What Cities Are You Interested In?</label>
+            <input type="text" id="bh-cities" placeholder="e.g. Rancho Cucamonga, Upland, Claremont" />
+          </div>
+          <div class="form-group">
             <label>What's Your Budget Range?</label>
             <select id="bh-budget">
               <option value="" disabled selected>Select a budget range</option>
-              <option>Under $500,000</option>
-              <option>$500,000 – $700,000</option>
+              <option>$600,000 – $700,000</option>
               <option>$700,000 – $900,000</option>
               <option>$900,000 – $1,200,000</option>
-              <option>$1,200,000+</option>
+              <option>$1,200,000 – $1,500,000</option>
+              <option>$1,500,000 – $2,000,000</option>
+              <option>$2,000,000+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Are You Pre-Qualified?</label>
+            <select id="bh-prequalified">
+              <option value="" disabled selected>Select an option</option>
+              <option>Yes, I'm pre-qualified</option>
+              <option>Not yet, I need help with this</option>
+              <option>Paying cash</option>
             </select>
           </div>
           <button onclick="submitBuyHero()" class="btn-submit">Let's Find Your Home →</button>
@@ -339,11 +353,13 @@
     const name = document.getElementById('bh-name').value.trim();
     const phone = document.getElementById('bh-phone').value.trim();
     if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+    const cities = document.getElementById('bh-cities').value.trim() || 'Not specified';
     const budget = document.getElementById('bh-budget').value || 'Not specified';
+    const prequalified = document.getElementById('bh-prequalified').value || 'Not specified';
     const data = {
       _subject: 'New Buyer Lead — AshleyAranaHomes.com/buy',
       _cc: 'marana6632@gmail.com',
-      'Name': name, 'Phone': phone, 'Budget': budget
+      'Name': name, 'Phone': phone, 'Cities Interested In': cities, 'Budget': budget, 'Pre-Qualified': prequalified
     };
     try {
       await fetch('https://formsubmit.co/ajax/Ashley@ashleyaranahomes.com', {
@@ -356,7 +372,7 @@
         await fetch('https://textbelt.com/text', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ phone: '9098378058', message: 'New buyer lead! ' + name + ' — ' + phone + ' — Budget: ' + budget, key: TB_KEY })
+          body: JSON.stringify({ phone: '9098378058', message: 'New buyer lead! ' + name + ' — ' + phone + ' — Cities: ' + cities + ' — Budget: ' + budget + ' — Pre-qualified: ' + prequalified, key: TB_KEY })
         });
       } catch {}
       document.getElementById('buyHeroFields').style.display = 'none';
